@@ -6,10 +6,12 @@
 
 This is the source code for CIKM 2023 short paper `Epidemiology-aware Deep Learning for Infectious Disease Dynamics Prediction (Mutong Liu, Yang Liu, and Jiming Liu)` and the compared baselines. This package include four folders:
 
+-  **DL4Epi-master-Epi**: This is the code for our proposed method Epi-CNNRNN-Res .
 -  **colagnn-master-Run-Epi**: This is the code for our proposed method Epi-Cola-GNN.
-- **DL4Epi-master-Epi**: This is the code for our proposed method Epi-CNNRNN-Res .
-- **colagnn-master-Run**: This is the original code of the method Cola-GNN. For the model details, please refer to the paper [Cola-GNN: Cross-location Attention based Graph Neural Networks for Long-term ILI Prediction](https://yue-ning.github.io/docs/CIKM20-colagnn.pdf). For the original code and dataset, please reder to the corresponding [github page]( https://github.com/CrickWu/DL4Epi).
-- **DL4Epi-master**: This is the original code of the method CNNRNN-Res. For the details, please refer to the paper [Deep Learning for Epidemiological Predictions](https://raw.githubusercontent.com/CrickWu/crickwu.github.io/master/papers/sigir2018.pdf). For the original code and dataset, please reder to the corresponding [github page](https://github.com/amy-deng/colagnn).
+-  **DL4Epi-master**: This is the original code of the method CNNRNN-Res. For the details, please refer to the paper [Deep Learning for Epidemiological Predictions](https://raw.githubusercontent.com/CrickWu/crickwu.github.io/master/papers/sigir2018.pdf). For the original code and dataset, please reder to the corresponding [github page](https://github.com/CrickWu/DL4Epi).
+-  **colagnn-master-Run**: This is the original code of the method Cola-GNN. For the model details, please refer to the paper [Cola-GNN: Cross-location Attention based Graph Neural Networks for Long-term ILI Prediction](https://yue-ning.github.io/docs/CIKM20-colagnn.pdf). For the original code and dataset, please reder to the corresponding [github page](https://github.com/amy-deng/colagnn).
+
+
 
 ## How to Run
 
