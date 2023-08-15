@@ -1,0 +1,12 @@
+Namespace(batch_size=128, clip=1.0, cuda=None, data='./data/us_hhs/data.txt', dropout=0.5, epilambda=0.2, epochs=2000, gpu=None, hidRNN=10, horizon=1, lr=0.001, metric=0, model='CNNRNN_Res', normalize=1, optim='adam', output_fun=None, ratio=0.001, residual_window=8, save_dir='save', save_name='cnnrnn_res.hhs.w-32.h-1.res-8.pt', seed=54321, sim_mat='./data/us_hhs/ind_mat.txt', train=0.6, valid=0.2, weight_decay=0, window=32)
+data shape (364, 10)
+<utils.Data_utility object at 0x7f737331ce20>
+model: Model(
+  (GRU1): GRU(10, 10)
+  (dropout): Dropout(p=0.5, inplace=False)
+  (linear1): Linear(in_features=10, out_features=10, bias=True)
+  (residual): Linear(in_features=8, out_features=1, bias=True)
+)
+* number of parameters: 879
+begin training
+| end of epoch   1 | time:  0.08s | train_loss   nan | valid rse   nan | valid rae   nan | valid corr    nan

@@ -1,0 +1,24 @@
+Namespace(batch_size=128, clip=1.0, cuda=None, data='./data/us_hhs/data.txt', dropout=0.2, epilambda=0.1, epochs=2000, gpu=None, hidRNN=10, horizon=4, lr=0.001, metric=0, model='CNNRNN_Res_epi', normalize=1, optim='adam', output_fun=None, ratio=0.01, residual_window=4, save_dir='save', save_name='cnnrnn_res_epi.hhs.w-16.h-4.res-4', seed=54321, sim_mat='./data/us_hhs/ind_mat.txt', train=0.6, valid=0.2, weight_decay=0, window=16)
+data shape (364, 10)
+model: Model(
+  (GRU1): GRU(10, 10)
+  (dropout): Dropout(p=0.2, inplace=False)
+  (linear1): Linear(in_features=10, out_features=10, bias=True)
+  (residual): Linear(in_features=4, out_features=1, bias=True)
+  (GRU2): GRU(1, 10, batch_first=True)
+  (PredBeta): Sequential(
+    (0): Linear(in_features=10, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=1, bias=True)
+    (3): Sigmoid()
+  )
+  (GRU3): GRU(1, 10, batch_first=True)
+  (PredGamma): Sequential(
+    (0): Linear(in_features=10, out_features=5, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=5, out_features=1, bias=True)
+    (3): Sigmoid()
+  )
+)
+* number of parameters: 1777
+begin training

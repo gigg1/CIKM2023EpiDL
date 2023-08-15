@@ -1,0 +1,723 @@
+--------Parameters--------
+Namespace(batch=32, bi=False, check_point=1, cuda=False, dataset='us_hhs', dropout=0.2, epilambda=1.0, epochs=500, gpu=3, hidsp=15, horizon=1, k=10, lamda=0.01, lr=0.001, model='cola_gnn_epi', mylog=False, n_hidden=10, n_layer=1, patience=200, rnn_model='RNN', save_dir='save', seed=42, shuffle=False, sim_mat='us_hhs-adj', test=0.2, train=0.6, val=0.2, weight_decay=0.0005, window=20)
+--------------------------
+data shape (364, 10)
+size of train/val/test sets 198 73 73
+#params: 2005
+begin training
+Epoch   1|time: 3.17s|train_loss 0.00754749|val_loss 0.00159623
+Best validation epoch: 1 Mon May 22 15:19:35 2023
+TEST MAE 2.2880 | std 0.7218 | RMSE 2.6338 | RMSEs 2.5227 | PCC -0.6993 | PCCs -0.8517 | R2 -6.7927 | R2s -10.6013 | Var -0.9120 | Vars -1.0024 | Peak 1.2575
+Epoch   2|time: 3.12s|train_loss 0.00655666|val_loss 0.00081241
+Best validation epoch: 2 Mon May 22 15:19:39 2023
+TEST MAE 1.1217 | std 0.4410 | RMSE 1.5351 | RMSEs 1.4485 | PCC -0.3493 | PCCs -0.8289 | R2 -1.6473 | R2s -2.6593 | Var -0.3094 | Vars -0.5960 | Peak 0.7717
+Epoch   3|time: 3.21s|train_loss 0.00590018|val_loss 0.00072538
+Best validation epoch: 3 Mon May 22 15:19:43 2023
+TEST MAE 0.7139 | std 0.2203 | RMSE 0.9994 | RMSEs 0.9524 | PCC 0.1296 | PCCs -0.6685 | R2 -0.1221 | R2s -0.5927 | Var -0.0934 | Vars -0.4118 | Peak 0.4065
+Epoch   4|time: 3.12s|train_loss 0.00576410|val_loss 0.00072694
+Epoch   5|time: 3.08s|train_loss 0.00573069|val_loss 0.00060902
+Best validation epoch: 5 Mon May 22 15:19:50 2023
+TEST MAE 0.6156 | std 0.2429 | RMSE 0.9105 | RMSEs 0.8517 | PCC 0.3886 | PCCs 0.1160 | R2 0.0687 | R2s -0.2509 | Var 0.1487 | Vars -0.0105 | Peak 0.3859
+Epoch   6|time: 3.09s|train_loss 0.00566069|val_loss 0.00056343
+Best validation epoch: 6 Mon May 22 15:19:54 2023
+TEST MAE 0.6198 | std 0.3110 | RMSE 0.9470 | RMSEs 0.8703 | PCC 0.4909 | PCCs 0.3628 | R2 -0.0073 | R2s -0.2931 | Var 0.2350 | Vars 0.1355 | Peak 0.4270
+Epoch   7|time: 3.18s|train_loss 0.00564597|val_loss 0.00054992
+Best validation epoch: 7 Mon May 22 15:19:58 2023
+TEST MAE 0.5416 | std 0.1863 | RMSE 0.7863 | RMSEs 0.7381 | PCC 0.5750 | PCCs 0.4896 | R2 0.3055 | R2s 0.0500 | Var 0.3268 | Vars 0.2343 | Peak 0.3106
+Epoch   8|time: 3.35s|train_loss 0.00563450|val_loss 0.00049808
+Best validation epoch: 8 Mon May 22 15:20:02 2023
+TEST MAE 0.5104 | std 0.2312 | RMSE 0.7840 | RMSEs 0.7217 | PCC 0.6366 | PCCs 0.5889 | R2 0.3096 | R2s 0.1077 | Var 0.3920 | Vars 0.3336 | Peak 0.3249
+Epoch   9|time: 3.16s|train_loss 0.00553246|val_loss 0.00047004
+Best validation epoch: 9 Mon May 22 15:20:06 2023
+TEST MAE 0.4906 | std 0.2428 | RMSE 0.7645 | RMSEs 0.6981 | PCC 0.6818 | PCCs 0.6524 | R2 0.3435 | R2s 0.1677 | Var 0.4492 | Vars 0.4123 | Peak 0.3170
+Epoch  10|time: 3.03s|train_loss 0.00554951|val_loss 0.00044996
+Best validation epoch: 10 Mon May 22 15:20:09 2023
+TEST MAE 0.4604 | std 0.2120 | RMSE 0.7087 | RMSEs 0.6495 | PCC 0.7136 | PCCs 0.6909 | R2 0.4359 | R2s 0.2759 | Var 0.4975 | Vars 0.4662 | Peak 0.2878
+Epoch  11|time: 3.17s|train_loss 0.00547001|val_loss 0.00042825
+Best validation epoch: 11 Mon May 22 15:20:13 2023
+TEST MAE 0.4428 | std 0.2089 | RMSE 0.6814 | RMSEs 0.6231 | PCC 0.7395 | PCCs 0.7222 | R2 0.4785 | R2s 0.3338 | Var 0.5372 | Vars 0.5123 | Peak 0.2756
+Epoch  12|time: 3.09s|train_loss 0.00546013|val_loss 0.00041054
+Best validation epoch: 12 Mon May 22 15:20:17 2023
+TEST MAE 0.4252 | std 0.1975 | RMSE 0.6509 | RMSEs 0.5956 | PCC 0.7603 | PCCs 0.7459 | R2 0.5241 | R2s 0.3902 | Var 0.5707 | Vars 0.5483 | Peak 0.2619
+Epoch  13|time: 3.11s|train_loss 0.00544394|val_loss 0.00039526
+Best validation epoch: 13 Mon May 22 15:20:21 2023
+TEST MAE 0.4079 | std 0.1827 | RMSE 0.6208 | RMSEs 0.5694 | PCC 0.7780 | PCCs 0.7657 | R2 0.5671 | R2s 0.4404 | Var 0.6000 | Vars 0.5784 | Peak 0.2478
+Epoch  14|time: 3.20s|train_loss 0.00539969|val_loss 0.00038011
+Best validation epoch: 14 Mon May 22 15:20:25 2023
+TEST MAE 0.3935 | std 0.1769 | RMSE 0.6007 | RMSEs 0.5507 | PCC 0.7932 | PCCs 0.7821 | R2 0.5947 | R2s 0.4765 | Var 0.6243 | Vars 0.6034 | Peak 0.2392
+Epoch  15|time: 3.07s|train_loss 0.00538476|val_loss 0.00036598
+Best validation epoch: 15 Mon May 22 15:20:29 2023
+TEST MAE 0.3869 | std 0.1898 | RMSE 0.5986 | RMSEs 0.5452 | PCC 0.8058 | PCCs 0.7958 | R2 0.5974 | R2s 0.4908 | Var 0.6434 | Vars 0.6245 | Peak 0.2389
+Epoch  16|time: 3.12s|train_loss 0.00534922|val_loss 0.00035425
+Best validation epoch: 16 Mon May 22 15:20:33 2023
+TEST MAE 0.3650 | std 0.1566 | RMSE 0.5580 | RMSEs 0.5138 | PCC 0.8176 | PCCs 0.8066 | R2 0.6503 | R2s 0.5418 | Var 0.6653 | Vars 0.6415 | Peak 0.2205
+Epoch  17|time: 3.09s|train_loss 0.00534489|val_loss 0.00034169
+Best validation epoch: 17 Mon May 22 15:20:36 2023
+TEST MAE 0.3695 | std 0.1903 | RMSE 0.5761 | RMSEs 0.5224 | PCC 0.8285 | PCCs 0.8187 | R2 0.6271 | R2s 0.5343 | Var 0.6799 | Vars 0.6606 | Peak 0.2308
+Epoch  18|time: 3.08s|train_loss 0.00529909|val_loss 0.00032588
+Best validation epoch: 18 Mon May 22 15:20:40 2023
+TEST MAE 0.3421 | std 0.1582 | RMSE 0.5390 | RMSEs 0.4930 | PCC 0.8384 | PCCs 0.8260 | R2 0.6737 | R2s 0.5821 | Var 0.6968 | Vars 0.6712 | Peak 0.2150
+Epoch  19|time: 3.18s|train_loss 0.00528433|val_loss 0.00031630
+Best validation epoch: 19 Mon May 22 15:20:44 2023
+TEST MAE 0.3306 | std 0.1425 | RMSE 0.5197 | RMSEs 0.4779 | PCC 0.8454 | PCCs 0.8314 | R2 0.6966 | R2s 0.6053 | Var 0.7096 | Vars 0.6797 | Peak 0.2070
+Epoch  20|time: 3.17s|train_loss 0.00529127|val_loss 0.00030425
+Best validation epoch: 20 Mon May 22 15:20:48 2023
+TEST MAE 0.3209 | std 0.1344 | RMSE 0.5019 | RMSEs 0.4630 | PCC 0.8535 | PCCs 0.8403 | R2 0.7171 | R2s 0.6284 | Var 0.7255 | Vars 0.6943 | Peak 0.1992
+Epoch  21|time: 3.14s|train_loss 0.00525285|val_loss 0.00029328
+Best validation epoch: 21 Mon May 22 15:20:52 2023
+TEST MAE 0.3162 | std 0.1507 | RMSE 0.5004 | RMSEs 0.4574 | PCC 0.8623 | PCCs 0.8518 | R2 0.7187 | R2s 0.6415 | Var 0.7415 | Vars 0.7127 | Peak 0.1975
+Epoch  22|time: 3.06s|train_loss 0.00522208|val_loss 0.00028109
+Best validation epoch: 22 Mon May 22 15:20:56 2023
+TEST MAE 0.2986 | std 0.1267 | RMSE 0.4728 | RMSEs 0.4359 | PCC 0.8706 | PCCs 0.8598 | R2 0.7489 | R2s 0.6713 | Var 0.7565 | Vars 0.7255 | Peak 0.1860
+Epoch  23|time: 3.07s|train_loss 0.00520240|val_loss 0.00027283
+Best validation epoch: 23 Mon May 22 15:21:00 2023
+TEST MAE 0.2892 | std 0.1294 | RMSE 0.4691 | RMSEs 0.4304 | PCC 0.8772 | PCCs 0.8651 | R2 0.7528 | R2s 0.6819 | Var 0.7663 | Vars 0.7340 | Peak 0.1848
+Epoch  24|time: 3.26s|train_loss 0.00519620|val_loss 0.00026745
+Best validation epoch: 24 Mon May 22 15:21:04 2023
+TEST MAE 0.2834 | std 0.1096 | RMSE 0.4510 | RMSEs 0.4179 | PCC 0.8813 | PCCs 0.8684 | R2 0.7715 | R2s 0.6967 | Var 0.7744 | Vars 0.7389 | Peak 0.1767
+Epoch  25|time: 3.06s|train_loss 0.00516019|val_loss 0.00025833
+Best validation epoch: 25 Mon May 22 15:21:07 2023
+TEST MAE 0.2749 | std 0.1219 | RMSE 0.4515 | RMSEs 0.4143 | PCC 0.8876 | PCCs 0.8753 | R2 0.7710 | R2s 0.7053 | Var 0.7845 | Vars 0.7503 | Peak 0.1770
+Epoch  26|time: 3.10s|train_loss 0.00515367|val_loss 0.00025069
+Best validation epoch: 26 Mon May 22 15:21:11 2023
+TEST MAE 0.2678 | std 0.1067 | RMSE 0.4326 | RMSEs 0.4002 | PCC 0.8914 | PCCs 0.8800 | R2 0.7898 | R2s 0.7224 | Var 0.7933 | Vars 0.7580 | Peak 0.1682
+Epoch  27|time: 3.11s|train_loss 0.00513753|val_loss 0.00024399
+Best validation epoch: 27 Mon May 22 15:21:15 2023
+TEST MAE 0.2646 | std 0.1144 | RMSE 0.4333 | RMSEs 0.3987 | PCC 0.8943 | PCCs 0.8826 | R2 0.7891 | R2s 0.7267 | Var 0.7987 | Vars 0.7619 | Peak 0.1688
+Epoch  28|time: 3.07s|train_loss 0.00509587|val_loss 0.00024495
+Epoch  29|time: 3.18s|train_loss 0.00508644|val_loss 0.00023137
+Best validation epoch: 29 Mon May 22 15:21:22 2023
+TEST MAE 0.2636 | std 0.1146 | RMSE 0.4279 | RMSEs 0.3938 | PCC 0.8980 | PCCs 0.8859 | R2 0.7943 | R2s 0.7338 | Var 0.8062 | Vars 0.7659 | Peak 0.1665
+Epoch  30|time: 3.08s|train_loss 0.00506692|val_loss 0.00022644
+Best validation epoch: 30 Mon May 22 15:21:26 2023
+TEST MAE 0.2560 | std 0.1078 | RMSE 0.4155 | RMSEs 0.3834 | PCC 0.9020 | PCCs 0.8898 | R2 0.8061 | R2s 0.7467 | Var 0.8133 | Vars 0.7734 | Peak 0.1610
+Epoch  31|time: 3.08s|train_loss 0.00505887|val_loss 0.00022370
+Best validation epoch: 31 Mon May 22 15:21:30 2023
+TEST MAE 0.2551 | std 0.0934 | RMSE 0.4015 | RMSEs 0.3748 | PCC 0.9050 | PCCs 0.8938 | R2 0.8189 | R2s 0.7540 | Var 0.8190 | Vars 0.7793 | Peak 0.1534
+Epoch  32|time: 3.11s|train_loss 0.00503378|val_loss 0.00022266
+Best validation epoch: 32 Mon May 22 15:21:33 2023
+TEST MAE 0.2567 | std 0.1088 | RMSE 0.4062 | RMSEs 0.3752 | PCC 0.9083 | PCCs 0.8967 | R2 0.8147 | R2s 0.7575 | Var 0.8249 | Vars 0.7852 | Peak 0.1553
+Epoch  33|time: 3.08s|train_loss 0.00504170|val_loss 0.00021770
+Best validation epoch: 33 Mon May 22 15:21:37 2023
+TEST MAE 0.2554 | std 0.0896 | RMSE 0.3961 | RMSEs 0.3713 | PCC 0.9080 | PCCs 0.8964 | R2 0.8238 | R2s 0.7569 | Var 0.8241 | Vars 0.7824 | Peak 0.1501
+Epoch  34|time: 3.13s|train_loss 0.00499079|val_loss 0.00021340
+Best validation epoch: 34 Mon May 22 15:21:41 2023
+TEST MAE 0.2528 | std 0.1040 | RMSE 0.4045 | RMSEs 0.3743 | PCC 0.9078 | PCCs 0.8933 | R2 0.8162 | R2s 0.7584 | Var 0.8241 | Vars 0.7794 | Peak 0.1564
+Epoch  35|time: 3.23s|train_loss 0.00498399|val_loss 0.00021441
+Epoch  36|time: 3.08s|train_loss 0.00498258|val_loss 0.00020575
+Best validation epoch: 36 Mon May 22 15:21:48 2023
+TEST MAE 0.2456 | std 0.0968 | RMSE 0.3893 | RMSEs 0.3621 | PCC 0.9119 | PCCs 0.8982 | R2 0.8297 | R2s 0.7722 | Var 0.8315 | Vars 0.7879 | Peak 0.1496
+Epoch  37|time: 3.14s|train_loss 0.00495610|val_loss 0.00020278
+Best validation epoch: 37 Mon May 22 15:21:52 2023
+TEST MAE 0.2460 | std 0.0981 | RMSE 0.3859 | RMSEs 0.3590 | PCC 0.9140 | PCCs 0.9015 | R2 0.8327 | R2s 0.7760 | Var 0.8349 | Vars 0.7917 | Peak 0.1475
+Epoch  38|time: 3.18s|train_loss 0.00493449|val_loss 0.00020805
+Epoch  39|time: 3.08s|train_loss 0.00497475|val_loss 0.00020802
+Epoch  40|time: 3.09s|train_loss 0.00491245|val_loss 0.00019857
+Best validation epoch: 40 Mon May 22 15:22:02 2023
+TEST MAE 0.2372 | std 0.0947 | RMSE 0.3769 | RMSEs 0.3503 | PCC 0.9185 | PCCs 0.9037 | R2 0.8404 | R2s 0.7870 | Var 0.8436 | Vars 0.8008 | Peak 0.1450
+Epoch  41|time: 3.17s|train_loss 0.00490081|val_loss 0.00019532
+Best validation epoch: 41 Mon May 22 15:22:06 2023
+TEST MAE 0.2404 | std 0.0848 | RMSE 0.3730 | RMSEs 0.3498 | PCC 0.9192 | PCCs 0.9059 | R2 0.8437 | R2s 0.7848 | Var 0.8438 | Vars 0.8009 | Peak 0.1410
+Epoch  42|time: 3.08s|train_loss 0.00492643|val_loss 0.00020129
+Epoch  43|time: 3.16s|train_loss 0.00491055|val_loss 0.00019486
+Best validation epoch: 43 Mon May 22 15:22:13 2023
+TEST MAE 0.2336 | std 0.0876 | RMSE 0.3668 | RMSEs 0.3425 | PCC 0.9216 | PCCs 0.9063 | R2 0.8489 | R2s 0.7952 | Var 0.8493 | Vars 0.8061 | Peak 0.1400
+Epoch  44|time: 3.15s|train_loss 0.00489357|val_loss 0.00020202
+Epoch  45|time: 3.07s|train_loss 0.00487296|val_loss 0.00019236
+Best validation epoch: 45 Mon May 22 15:22:20 2023
+TEST MAE 0.2385 | std 0.0943 | RMSE 0.3697 | RMSEs 0.3442 | PCC 0.9227 | PCCs 0.9086 | R2 0.8465 | R2s 0.7941 | Var 0.8505 | Vars 0.8064 | Peak 0.1408
+Epoch  46|time: 3.10s|train_loss 0.00486440|val_loss 0.00020201
+Epoch  47|time: 3.07s|train_loss 0.00486172|val_loss 0.00019966
+Epoch  48|time: 3.09s|train_loss 0.00483115|val_loss 0.00019112
+Best validation epoch: 48 Mon May 22 15:22:30 2023
+TEST MAE 0.2277 | std 0.0889 | RMSE 0.3622 | RMSEs 0.3377 | PCC 0.9247 | PCCs 0.9070 | R2 0.8526 | R2s 0.8014 | Var 0.8550 | Vars 0.8108 | Peak 0.1411
+Epoch  49|time: 3.25s|train_loss 0.00484064|val_loss 0.00019483
+Epoch  50|time: 3.06s|train_loss 0.00483912|val_loss 0.00018652
+Best validation epoch: 50 Mon May 22 15:22:37 2023
+TEST MAE 0.2259 | std 0.0893 | RMSE 0.3590 | RMSEs 0.3344 | PCC 0.9267 | PCCs 0.9097 | R2 0.8552 | R2s 0.8052 | Var 0.8587 | Vars 0.8155 | Peak 0.1395
+Epoch  51|time: 3.06s|train_loss 0.00481916|val_loss 0.00018644
+Best validation epoch: 51 Mon May 22 15:22:41 2023
+TEST MAE 0.2238 | std 0.0855 | RMSE 0.3539 | RMSEs 0.3305 | PCC 0.9278 | PCCs 0.9106 | R2 0.8593 | R2s 0.8093 | Var 0.8608 | Vars 0.8176 | Peak 0.1367
+Epoch  52|time: 3.11s|train_loss 0.00482683|val_loss 0.00019081
+Epoch  53|time: 3.04s|train_loss 0.00481689|val_loss 0.00018327
+Best validation epoch: 53 Mon May 22 15:22:48 2023
+TEST MAE 0.2252 | std 0.0871 | RMSE 0.3530 | RMSEs 0.3293 | PCC 0.9290 | PCCs 0.9130 | R2 0.8600 | R2s 0.8107 | Var 0.8626 | Vars 0.8193 | Peak 0.1355
+Epoch  54|time: 3.17s|train_loss 0.00479910|val_loss 0.00018229
+Best validation epoch: 54 Mon May 22 15:22:51 2023
+TEST MAE 0.2239 | std 0.0842 | RMSE 0.3516 | RMSEs 0.3285 | PCC 0.9289 | PCCs 0.9123 | R2 0.8611 | R2s 0.8113 | Var 0.8622 | Vars 0.8181 | Peak 0.1350
+Epoch  55|time: 3.05s|train_loss 0.00478182|val_loss 0.00019282
+Epoch  56|time: 3.04s|train_loss 0.00478978|val_loss 0.00019730
+Epoch  57|time: 3.17s|train_loss 0.00477369|val_loss 0.00018043
+Best validation epoch: 57 Mon May 22 15:23:01 2023
+TEST MAE 0.2166 | std 0.0816 | RMSE 0.3433 | RMSEs 0.3210 | PCC 0.9321 | PCCs 0.9152 | R2 0.8676 | R2s 0.8195 | Var 0.8688 | Vars 0.8262 | Peak 0.1322
+Epoch  58|time: 3.13s|train_loss 0.00476964|val_loss 0.00020651
+Epoch  59|time: 3.07s|train_loss 0.00484179|val_loss 0.00020749
+Epoch  60|time: 3.06s|train_loss 0.00479142|val_loss 0.00017920
+Best validation epoch: 60 Mon May 22 15:23:11 2023
+TEST MAE 0.2228 | std 0.0748 | RMSE 0.3437 | RMSEs 0.3231 | PCC 0.9323 | PCCs 0.9167 | R2 0.8673 | R2s 0.8157 | Var 0.8676 | Vars 0.8249 | Peak 0.1292
+Epoch  61|time: 3.17s|train_loss 0.00478237|val_loss 0.00017911
+Best validation epoch: 61 Mon May 22 15:23:15 2023
+TEST MAE 0.2208 | std 0.0754 | RMSE 0.3420 | RMSEs 0.3214 | PCC 0.9326 | PCCs 0.9165 | R2 0.8686 | R2s 0.8179 | Var 0.8687 | Vars 0.8261 | Peak 0.1292
+Epoch  62|time: 3.08s|train_loss 0.00475053|val_loss 0.00018732
+Epoch  63|time: 3.13s|train_loss 0.00475420|val_loss 0.00017811
+Best validation epoch: 63 Mon May 22 15:23:22 2023
+TEST MAE 0.2178 | std 0.0737 | RMSE 0.3371 | RMSEs 0.3172 | PCC 0.9344 | PCCs 0.9179 | R2 0.8724 | R2s 0.8224 | Var 0.8726 | Vars 0.8310 | Peak 0.1273
+Epoch  64|time: 3.14s|train_loss 0.00474753|val_loss 0.00017791
+Best validation epoch: 64 Mon May 22 15:23:26 2023
+TEST MAE 0.2152 | std 0.0821 | RMSE 0.3392 | RMSEs 0.3171 | PCC 0.9350 | PCCs 0.9178 | R2 0.8708 | R2s 0.8239 | Var 0.8742 | Vars 0.8320 | Peak 0.1317
+Epoch  65|time: 3.08s|train_loss 0.00473691|val_loss 0.00017651
+Best validation epoch: 65 Mon May 22 15:23:30 2023
+TEST MAE 0.2140 | std 0.0803 | RMSE 0.3375 | RMSEs 0.3157 | PCC 0.9351 | PCCs 0.9180 | R2 0.8720 | R2s 0.8253 | Var 0.8743 | Vars 0.8320 | Peak 0.1306
+Epoch  66|time: 3.16s|train_loss 0.00473413|val_loss 0.00017532
+Best validation epoch: 66 Mon May 22 15:23:34 2023
+TEST MAE 0.2134 | std 0.0761 | RMSE 0.3345 | RMSEs 0.3136 | PCC 0.9355 | PCCs 0.9188 | R2 0.8743 | R2s 0.8271 | Var 0.8746 | Vars 0.8325 | Peak 0.1278
+Epoch  67|time: 3.05s|train_loss 0.00472945|val_loss 0.00017614
+Epoch  68|time: 3.15s|train_loss 0.00470784|val_loss 0.00018090
+Epoch  69|time: 3.21s|train_loss 0.00471021|val_loss 0.00017757
+Epoch  70|time: 3.03s|train_loss 0.00472808|val_loss 0.00017426
+Best validation epoch: 70 Mon May 22 15:23:47 2023
+TEST MAE 0.2134 | std 0.0711 | RMSE 0.3282 | RMSEs 0.3092 | PCC 0.9383 | PCCs 0.9228 | R2 0.8790 | R2s 0.8306 | Var 0.8796 | Vars 0.8395 | Peak 0.1224
+Epoch  71|time: 3.05s|train_loss 0.00472640|val_loss 0.00018500
+Epoch  72|time: 3.31s|train_loss 0.00468984|val_loss 0.00017495
+Epoch  73|time: 3.08s|train_loss 0.00470023|val_loss 0.00018640
+Epoch  74|time: 3.07s|train_loss 0.00469997|val_loss 0.00018881
+Epoch  75|time: 3.16s|train_loss 0.00469616|val_loss 0.00017864
+Epoch  76|time: 3.13s|train_loss 0.00469107|val_loss 0.00018430
+Epoch  77|time: 3.16s|train_loss 0.00469134|val_loss 0.00017973
+Epoch  78|time: 3.20s|train_loss 0.00470501|val_loss 0.00017713
+Epoch  79|time: 3.05s|train_loss 0.00467581|val_loss 0.00018126
+Epoch  80|time: 3.04s|train_loss 0.00465978|val_loss 0.00017759
+Epoch  81|time: 3.16s|train_loss 0.00469362|val_loss 0.00017169
+Best validation epoch: 81 Mon May 22 15:24:22 2023
+TEST MAE 0.2033 | std 0.0713 | RMSE 0.3181 | RMSEs 0.2987 | PCC 0.9419 | PCCs 0.9274 | R2 0.8863 | R2s 0.8425 | Var 0.8863 | Vars 0.8474 | Peak 0.1193
+Epoch  82|time: 3.06s|train_loss 0.00466939|val_loss 0.00017156
+Best validation epoch: 82 Mon May 22 15:24:26 2023
+TEST MAE 0.2047 | std 0.0720 | RMSE 0.3208 | RMSEs 0.3008 | PCC 0.9416 | PCCs 0.9273 | R2 0.8844 | R2s 0.8403 | Var 0.8846 | Vars 0.8444 | Peak 0.1207
+Epoch  83|time: 3.05s|train_loss 0.00466124|val_loss 0.00017206
+Epoch  84|time: 3.19s|train_loss 0.00463304|val_loss 0.00017150
+Best validation epoch: 84 Mon May 22 15:24:33 2023
+TEST MAE 0.2056 | std 0.0710 | RMSE 0.3223 | RMSEs 0.3027 | PCC 0.9408 | PCCs 0.9249 | R2 0.8833 | R2s 0.8380 | Var 0.8835 | Vars 0.8429 | Peak 0.1220
+Epoch  85|time: 3.08s|train_loss 0.00464002|val_loss 0.00016965
+Best validation epoch: 85 Mon May 22 15:24:37 2023
+TEST MAE 0.2040 | std 0.0706 | RMSE 0.3205 | RMSEs 0.3010 | PCC 0.9413 | PCCs 0.9251 | R2 0.8846 | R2s 0.8399 | Var 0.8847 | Vars 0.8443 | Peak 0.1221
+Epoch  86|time: 3.02s|train_loss 0.00462250|val_loss 0.00017837
+Epoch  87|time: 3.16s|train_loss 0.00465266|val_loss 0.00017578
+Epoch  88|time: 3.16s|train_loss 0.00462781|val_loss 0.00017087
+Epoch  89|time: 3.08s|train_loss 0.00463247|val_loss 0.00017372
+Epoch  90|time: 3.14s|train_loss 0.00463547|val_loss 0.00017374
+Epoch  91|time: 3.08s|train_loss 0.00461910|val_loss 0.00017288
+Epoch  92|time: 3.08s|train_loss 0.00461014|val_loss 0.00017037
+Epoch  93|time: 3.19s|train_loss 0.00460817|val_loss 0.00016905
+Best validation epoch: 93 Mon May 22 15:25:03 2023
+TEST MAE 0.2009 | std 0.0686 | RMSE 0.3130 | RMSEs 0.2946 | PCC 0.9438 | PCCs 0.9285 | R2 0.8900 | R2s 0.8463 | Var 0.8900 | Vars 0.8513 | Peak 0.1177
+Epoch  94|time: 3.13s|train_loss 0.00464105|val_loss 0.00016986
+Epoch  95|time: 3.06s|train_loss 0.00462446|val_loss 0.00016781
+Best validation epoch: 95 Mon May 22 15:25:09 2023
+TEST MAE 0.1990 | std 0.0690 | RMSE 0.3122 | RMSEs 0.2934 | PCC 0.9442 | PCCs 0.9285 | R2 0.8905 | R2s 0.8478 | Var 0.8908 | Vars 0.8516 | Peak 0.1190
+Epoch  96|time: 3.20s|train_loss 0.00460272|val_loss 0.00016921
+Epoch  97|time: 3.02s|train_loss 0.00462551|val_loss 0.00017237
+Epoch  98|time: 3.12s|train_loss 0.00462716|val_loss 0.00016987
+Epoch  99|time: 3.18s|train_loss 0.00458416|val_loss 0.00016648
+Best validation epoch: 99 Mon May 22 15:25:23 2023
+TEST MAE 0.2000 | std 0.0677 | RMSE 0.3121 | RMSEs 0.2938 | PCC 0.9443 | PCCs 0.9282 | R2 0.8906 | R2s 0.8470 | Var 0.8906 | Vars 0.8507 | Peak 0.1186
+Epoch 100|time: 3.05s|train_loss 0.00456907|val_loss 0.00016671
+Epoch 101|time: 3.07s|train_loss 0.00458678|val_loss 0.00016576
+Best validation epoch: 101 Mon May 22 15:25:30 2023
+TEST MAE 0.1979 | std 0.0680 | RMSE 0.3108 | RMSEs 0.2921 | PCC 0.9451 | PCCs 0.9295 | R2 0.8915 | R2s 0.8490 | Var 0.8919 | Vars 0.8524 | Peak 0.1191
+Epoch 102|time: 3.12s|train_loss 0.00457462|val_loss 0.00016521
+Best validation epoch: 102 Mon May 22 15:25:33 2023
+TEST MAE 0.1975 | std 0.0675 | RMSE 0.3105 | RMSEs 0.2918 | PCC 0.9454 | PCCs 0.9299 | R2 0.8917 | R2s 0.8492 | Var 0.8920 | Vars 0.8524 | Peak 0.1186
+Epoch 103|time: 3.06s|train_loss 0.00456758|val_loss 0.00016615
+Epoch 104|time: 3.16s|train_loss 0.00457045|val_loss 0.00016592
+Epoch 105|time: 3.08s|train_loss 0.00456888|val_loss 0.00016577
+Epoch 106|time: 3.06s|train_loss 0.00455230|val_loss 0.00017140
+Epoch 107|time: 3.11s|train_loss 0.00456268|val_loss 0.00016411
+Best validation epoch: 107 Mon May 22 15:25:50 2023
+TEST MAE 0.1973 | std 0.0659 | RMSE 0.3055 | RMSEs 0.2882 | PCC 0.9470 | PCCs 0.9316 | R2 0.8952 | R2s 0.8522 | Var 0.8957 | Vars 0.8579 | Peak 0.1146
+Epoch 108|time: 3.11s|train_loss 0.00453024|val_loss 0.00016713
+Epoch 109|time: 3.05s|train_loss 0.00454109|val_loss 0.00016811
+Epoch 110|time: 3.07s|train_loss 0.00454463|val_loss 0.00017097
+Epoch 111|time: 3.20s|train_loss 0.00453032|val_loss 0.00016514
+Epoch 112|time: 3.04s|train_loss 0.00452676|val_loss 0.00016252
+Best validation epoch: 112 Mon May 22 15:26:06 2023
+TEST MAE 0.1963 | std 0.0662 | RMSE 0.3055 | RMSEs 0.2880 | PCC 0.9481 | PCCs 0.9340 | R2 0.8951 | R2s 0.8521 | Var 0.8963 | Vars 0.8586 | Peak 0.1135
+Epoch 113|time: 3.07s|train_loss 0.00451929|val_loss 0.00017427
+Epoch 114|time: 3.14s|train_loss 0.00452361|val_loss 0.00016467
+Epoch 115|time: 3.05s|train_loss 0.00454274|val_loss 0.00016330
+Epoch 116|time: 3.13s|train_loss 0.00453265|val_loss 0.00017620
+Epoch 117|time: 3.10s|train_loss 0.00455567|val_loss 0.00018572
+Epoch 118|time: 3.07s|train_loss 0.00456007|val_loss 0.00016512
+Epoch 119|time: 3.06s|train_loss 0.00449795|val_loss 0.00016394
+Epoch 120|time: 3.08s|train_loss 0.00449935|val_loss 0.00016736
+Epoch 121|time: 3.36s|train_loss 0.00452666|val_loss 0.00017366
+Epoch 122|time: 3.07s|train_loss 0.00448188|val_loss 0.00016184
+Best validation epoch: 122 Mon May 22 15:26:38 2023
+TEST MAE 0.1876 | std 0.0659 | RMSE 0.2962 | RMSEs 0.2787 | PCC 0.9500 | PCCs 0.9348 | R2 0.9015 | R2s 0.8624 | Var 0.9026 | Vars 0.8663 | Peak 0.1148
+Epoch 123|time: 3.09s|train_loss 0.00454664|val_loss 0.00018240
+Epoch 124|time: 3.17s|train_loss 0.00450749|val_loss 0.00019018
+Epoch 125|time: 3.08s|train_loss 0.00449672|val_loss 0.00016952
+Epoch 126|time: 3.08s|train_loss 0.00449468|val_loss 0.00015986
+Best validation epoch: 126 Mon May 22 15:26:51 2023
+TEST MAE 0.1884 | std 0.0643 | RMSE 0.2960 | RMSEs 0.2787 | PCC 0.9504 | PCCs 0.9364 | R2 0.9016 | R2s 0.8624 | Var 0.9023 | Vars 0.8657 | Peak 0.1126
+Epoch 127|time: 3.15s|train_loss 0.00451125|val_loss 0.00016974
+Epoch 128|time: 3.13s|train_loss 0.00450124|val_loss 0.00017647
+Epoch 129|time: 3.05s|train_loss 0.00448909|val_loss 0.00017538
+Epoch 130|time: 3.23s|train_loss 0.00446660|val_loss 0.00018040
+Epoch 131|time: 3.17s|train_loss 0.00452121|val_loss 0.00018320
+Epoch 132|time: 3.10s|train_loss 0.00446828|val_loss 0.00016707
+Epoch 133|time: 3.10s|train_loss 0.00447898|val_loss 0.00016376
+Epoch 134|time: 3.10s|train_loss 0.00446795|val_loss 0.00016092
+Epoch 135|time: 3.09s|train_loss 0.00447724|val_loss 0.00015906
+Best validation epoch: 135 Mon May 22 15:27:20 2023
+TEST MAE 0.1880 | std 0.0637 | RMSE 0.2956 | RMSEs 0.2785 | PCC 0.9503 | PCCs 0.9360 | R2 0.9019 | R2s 0.8623 | Var 0.9019 | Vars 0.8651 | Peak 0.1127
+Epoch 136|time: 3.12s|train_loss 0.00446371|val_loss 0.00015973
+Epoch 137|time: 3.06s|train_loss 0.00445685|val_loss 0.00016247
+Epoch 138|time: 3.10s|train_loss 0.00445175|val_loss 0.00017249
+Epoch 139|time: 3.20s|train_loss 0.00444161|val_loss 0.00016068
+Epoch 140|time: 3.07s|train_loss 0.00442344|val_loss 0.00016041
+Epoch 141|time: 3.08s|train_loss 0.00445243|val_loss 0.00015644
+Best validation epoch: 141 Mon May 22 15:27:39 2023
+TEST MAE 0.1848 | std 0.0598 | RMSE 0.2880 | RMSEs 0.2722 | PCC 0.9525 | PCCs 0.9385 | R2 0.9068 | R2s 0.8680 | Var 0.9069 | Vars 0.8726 | Peak 0.1088
+Epoch 142|time: 3.16s|train_loss 0.00442650|val_loss 0.00015748
+Epoch 143|time: 3.15s|train_loss 0.00442510|val_loss 0.00015857
+Epoch 144|time: 3.11s|train_loss 0.00441547|val_loss 0.00015803
+Epoch 145|time: 3.13s|train_loss 0.00441209|val_loss 0.00015699
+Epoch 146|time: 3.04s|train_loss 0.00439811|val_loss 0.00015593
+Best validation epoch: 146 Mon May 22 15:27:55 2023
+TEST MAE 0.1871 | std 0.0589 | RMSE 0.2901 | RMSEs 0.2749 | PCC 0.9525 | PCCs 0.9383 | R2 0.9054 | R2s 0.8647 | Var 0.9061 | Vars 0.8711 | Peak 0.1089
+Epoch 147|time: 3.14s|train_loss 0.00439200|val_loss 0.00016964
+Epoch 148|time: 3.09s|train_loss 0.00443115|val_loss 0.00015914
+Epoch 149|time: 3.07s|train_loss 0.00441088|val_loss 0.00015882
+Epoch 150|time: 3.08s|train_loss 0.00438653|val_loss 0.00016098
+Epoch 151|time: 3.06s|train_loss 0.00437506|val_loss 0.00015810
+Epoch 152|time: 3.18s|train_loss 0.00439999|val_loss 0.00015558
+Best validation epoch: 152 Mon May 22 15:28:15 2023
+TEST MAE 0.1833 | std 0.0604 | RMSE 0.2889 | RMSEs 0.2729 | PCC 0.9527 | PCCs 0.9382 | R2 0.9063 | R2s 0.8671 | Var 0.9064 | Vars 0.8702 | Peak 0.1099
+Epoch 153|time: 3.07s|train_loss 0.00437857|val_loss 0.00015353
+Best validation epoch: 153 Mon May 22 15:28:18 2023
+TEST MAE 0.1838 | std 0.0602 | RMSE 0.2888 | RMSEs 0.2727 | PCC 0.9532 | PCCs 0.9394 | R2 0.9063 | R2s 0.8674 | Var 0.9063 | Vars 0.8699 | Peak 0.1099
+Epoch 154|time: 3.13s|train_loss 0.00438761|val_loss 0.00015521
+Epoch 155|time: 3.06s|train_loss 0.00436068|val_loss 0.00015492
+Epoch 156|time: 3.06s|train_loss 0.00438324|val_loss 0.00015502
+Epoch 157|time: 3.20s|train_loss 0.00436035|val_loss 0.00015755
+Epoch 158|time: 3.52s|train_loss 0.00437952|val_loss 0.00015654
+Epoch 159|time: 3.48s|train_loss 0.00434624|val_loss 0.00015564
+Epoch 160|time: 3.42s|train_loss 0.00433176|val_loss 0.00015412
+Epoch 161|time: 3.41s|train_loss 0.00433011|val_loss 0.00015310
+Best validation epoch: 161 Mon May 22 15:28:45 2023
+TEST MAE 0.1823 | std 0.0596 | RMSE 0.2866 | RMSEs 0.2706 | PCC 0.9537 | PCCs 0.9399 | R2 0.9077 | R2s 0.8696 | Var 0.9079 | Vars 0.8719 | Peak 0.1094
+Epoch 162|time: 3.41s|train_loss 0.00434877|val_loss 0.00015184
+Best validation epoch: 162 Mon May 22 15:28:50 2023
+TEST MAE 0.1836 | std 0.0591 | RMSE 0.2878 | RMSEs 0.2721 | PCC 0.9541 | PCCs 0.9412 | R2 0.9070 | R2s 0.8677 | Var 0.9070 | Vars 0.8709 | Peak 0.1080
+Epoch 163|time: 3.58s|train_loss 0.00433920|val_loss 0.00015315
+Epoch 164|time: 3.41s|train_loss 0.00433705|val_loss 0.00015329
+Epoch 165|time: 3.53s|train_loss 0.00433039|val_loss 0.00015575
+Epoch 166|time: 3.44s|train_loss 0.00430903|val_loss 0.00015629
+Epoch 167|time: 3.40s|train_loss 0.00429942|val_loss 0.00015203
+Epoch 168|time: 3.44s|train_loss 0.00433089|val_loss 0.00015186
+Epoch 169|time: 3.55s|train_loss 0.00432761|val_loss 0.00015540
+Epoch 170|time: 3.06s|train_loss 0.00436088|val_loss 0.00015367
+Epoch 171|time: 3.04s|train_loss 0.00431586|val_loss 0.00015183
+Best validation epoch: 171 Mon May 22 15:29:21 2023
+TEST MAE 0.1789 | std 0.0591 | RMSE 0.2806 | RMSEs 0.2648 | PCC 0.9554 | PCCs 0.9416 | R2 0.9115 | R2s 0.8753 | Var 0.9122 | Vars 0.8781 | Peak 0.1078
+Epoch 172|time: 3.24s|train_loss 0.00433496|val_loss 0.00015172
+Best validation epoch: 172 Mon May 22 15:29:25 2023
+TEST MAE 0.1826 | std 0.0568 | RMSE 0.2851 | RMSEs 0.2703 | PCC 0.9551 | PCCs 0.9422 | R2 0.9087 | R2s 0.8689 | Var 0.9100 | Vars 0.8758 | Peak 0.1057
+Epoch 173|time: 3.06s|train_loss 0.00431162|val_loss 0.00015064
+Best validation epoch: 173 Mon May 22 15:29:29 2023
+TEST MAE 0.1801 | std 0.0576 | RMSE 0.2827 | RMSEs 0.2673 | PCC 0.9552 | PCCs 0.9418 | R2 0.9102 | R2s 0.8725 | Var 0.9102 | Vars 0.8750 | Peak 0.1067
+Epoch 174|time: 3.16s|train_loss 0.00430237|val_loss 0.00016035
+Epoch 175|time: 3.08s|train_loss 0.00430791|val_loss 0.00015800
+Epoch 176|time: 3.05s|train_loss 0.00428796|val_loss 0.00015310
+Epoch 177|time: 3.04s|train_loss 0.00428215|val_loss 0.00015153
+Epoch 178|time: 3.18s|train_loss 0.00432132|val_loss 0.00015736
+Epoch 179|time: 3.18s|train_loss 0.00425905|val_loss 0.00015301
+Epoch 180|time: 3.06s|train_loss 0.00429444|val_loss 0.00015312
+Epoch 181|time: 3.06s|train_loss 0.00426339|val_loss 0.00015249
+Epoch 182|time: 3.07s|train_loss 0.00426993|val_loss 0.00014900
+Best validation epoch: 182 Mon May 22 15:29:57 2023
+TEST MAE 0.1789 | std 0.0551 | RMSE 0.2782 | RMSEs 0.2639 | PCC 0.9565 | PCCs 0.9429 | R2 0.9130 | R2s 0.8752 | Var 0.9131 | Vars 0.8787 | Peak 0.1041
+Epoch 183|time: 3.11s|train_loss 0.00427649|val_loss 0.00014902
+Epoch 184|time: 3.15s|train_loss 0.00426678|val_loss 0.00015620
+Epoch 185|time: 3.41s|train_loss 0.00425448|val_loss 0.00015293
+Epoch 186|time: 3.09s|train_loss 0.00427628|val_loss 0.00015365
+Epoch 187|time: 3.11s|train_loss 0.00424082|val_loss 0.00015361
+Epoch 188|time: 3.14s|train_loss 0.00424330|val_loss 0.00015079
+Epoch 189|time: 3.08s|train_loss 0.00422956|val_loss 0.00015425
+Epoch 190|time: 3.09s|train_loss 0.00426837|val_loss 0.00015399
+Epoch 191|time: 3.05s|train_loss 0.00421740|val_loss 0.00015062
+Epoch 192|time: 3.07s|train_loss 0.00422460|val_loss 0.00015055
+Epoch 193|time: 3.21s|train_loss 0.00423196|val_loss 0.00015716
+Epoch 194|time: 3.04s|train_loss 0.00424101|val_loss 0.00015170
+Epoch 195|time: 3.06s|train_loss 0.00422022|val_loss 0.00015086
+Epoch 196|time: 3.06s|train_loss 0.00425175|val_loss 0.00015111
+Epoch 197|time: 3.27s|train_loss 0.00422434|val_loss 0.00016283
+Epoch 198|time: 3.07s|train_loss 0.00423990|val_loss 0.00016018
+Epoch 199|time: 3.08s|train_loss 0.00420818|val_loss 0.00014898
+Best validation epoch: 199 Mon May 22 15:30:51 2023
+TEST MAE 0.1800 | std 0.0563 | RMSE 0.2825 | RMSEs 0.2676 | PCC 0.9558 | PCCs 0.9427 | R2 0.9103 | R2s 0.8717 | Var 0.9108 | Vars 0.8759 | Peak 0.1052
+Epoch 200|time: 3.13s|train_loss 0.00422314|val_loss 0.00015239
+Epoch 201|time: 3.06s|train_loss 0.00424466|val_loss 0.00015091
+Epoch 202|time: 3.15s|train_loss 0.00422575|val_loss 0.00014928
+Epoch 203|time: 3.13s|train_loss 0.00421532|val_loss 0.00014870
+Best validation epoch: 203 Mon May 22 15:31:04 2023
+TEST MAE 0.1750 | std 0.0549 | RMSE 0.2731 | RMSEs 0.2588 | PCC 0.9575 | PCCs 0.9429 | R2 0.9162 | R2s 0.8802 | Var 0.9163 | Vars 0.8821 | Peak 0.1038
+Epoch 204|time: 3.26s|train_loss 0.00417556|val_loss 0.00014763
+Best validation epoch: 204 Mon May 22 15:31:08 2023
+TEST MAE 0.1767 | std 0.0544 | RMSE 0.2752 | RMSEs 0.2610 | PCC 0.9575 | PCCs 0.9439 | R2 0.9149 | R2s 0.8779 | Var 0.9150 | Vars 0.8805 | Peak 0.1026
+Epoch 205|time: 3.12s|train_loss 0.00423515|val_loss 0.00014767
+Epoch 206|time: 3.06s|train_loss 0.00417507|val_loss 0.00014907
+Epoch 207|time: 3.07s|train_loss 0.00416961|val_loss 0.00015526
+Epoch 208|time: 3.13s|train_loss 0.00417438|val_loss 0.00015276
+Epoch 209|time: 3.18s|train_loss 0.00414339|val_loss 0.00014922
+Epoch 210|time: 3.06s|train_loss 0.00412811|val_loss 0.00015157
+Epoch 211|time: 3.07s|train_loss 0.00421833|val_loss 0.00015032
+Epoch 212|time: 3.17s|train_loss 0.00416136|val_loss 0.00014781
+Epoch 213|time: 3.01s|train_loss 0.00412976|val_loss 0.00014841
+Epoch 214|time: 3.07s|train_loss 0.00416995|val_loss 0.00015026
+Epoch 215|time: 3.23s|train_loss 0.00414370|val_loss 0.00014996
+Epoch 216|time: 3.16s|train_loss 0.00415839|val_loss 0.00014818
+Epoch 217|time: 3.09s|train_loss 0.00415002|val_loss 0.00015176
+Epoch 218|time: 3.16s|train_loss 0.00415648|val_loss 0.00014828
+Epoch 219|time: 3.05s|train_loss 0.00420075|val_loss 0.00014984
+Epoch 220|time: 3.07s|train_loss 0.00419787|val_loss 0.00014821
+Epoch 221|time: 3.11s|train_loss 0.00421501|val_loss 0.00014662
+Best validation epoch: 221 Mon May 22 15:32:02 2023
+TEST MAE 0.1762 | std 0.0555 | RMSE 0.2743 | RMSEs 0.2597 | PCC 0.9578 | PCCs 0.9443 | R2 0.9155 | R2s 0.8795 | Var 0.9156 | Vars 0.8813 | Peak 0.1032
+Epoch 222|time: 3.10s|train_loss 0.00414011|val_loss 0.00014700
+Epoch 223|time: 3.05s|train_loss 0.00410508|val_loss 0.00014807
+Epoch 224|time: 3.06s|train_loss 0.00417349|val_loss 0.00014830
+Epoch 225|time: 3.09s|train_loss 0.00417022|val_loss 0.00014779
+Epoch 226|time: 3.16s|train_loss 0.00410624|val_loss 0.00014900
+Epoch 227|time: 3.04s|train_loss 0.00410001|val_loss 0.00014728
+Epoch 228|time: 3.07s|train_loss 0.00408584|val_loss 0.00014748
+Epoch 229|time: 3.07s|train_loss 0.00414414|val_loss 0.00015279
+Epoch 230|time: 3.10s|train_loss 0.00407283|val_loss 0.00015397
+Epoch 231|time: 3.19s|train_loss 0.00410595|val_loss 0.00014998
+Epoch 232|time: 3.03s|train_loss 0.00407068|val_loss 0.00015044
+Epoch 233|time: 3.04s|train_loss 0.00405941|val_loss 0.00015553
+Epoch 234|time: 3.17s|train_loss 0.00408458|val_loss 0.00014726
+Epoch 235|time: 3.02s|train_loss 0.00406593|val_loss 0.00015691
+Epoch 236|time: 3.15s|train_loss 0.00416639|val_loss 0.00017854
+Epoch 237|time: 3.04s|train_loss 0.00414725|val_loss 0.00015243
+Epoch 238|time: 3.12s|train_loss 0.00409681|val_loss 0.00014579
+Best validation epoch: 238 Mon May 22 15:32:55 2023
+TEST MAE 0.1760 | std 0.0540 | RMSE 0.2731 | RMSEs 0.2590 | PCC 0.9581 | PCCs 0.9443 | R2 0.9162 | R2s 0.8800 | Var 0.9163 | Vars 0.8818 | Peak 0.1021
+Epoch 239|time: 3.06s|train_loss 0.00407343|val_loss 0.00014967
+Epoch 240|time: 3.07s|train_loss 0.00406454|val_loss 0.00014959
+Epoch 241|time: 3.17s|train_loss 0.00403859|val_loss 0.00014820
+Epoch 242|time: 3.12s|train_loss 0.00408545|val_loss 0.00014542
+Best validation epoch: 242 Mon May 22 15:33:08 2023
+TEST MAE 0.1730 | std 0.0535 | RMSE 0.2698 | RMSEs 0.2557 | PCC 0.9587 | PCCs 0.9453 | R2 0.9183 | R2s 0.8830 | Var 0.9183 | Vars 0.8852 | Peak 0.1006
+Epoch 243|time: 3.04s|train_loss 0.00404183|val_loss 0.00014790
+Epoch 244|time: 3.13s|train_loss 0.00402315|val_loss 0.00014600
+Epoch 245|time: 3.03s|train_loss 0.00405177|val_loss 0.00014717
+Epoch 246|time: 3.05s|train_loss 0.00399181|val_loss 0.00014777
+Epoch 247|time: 3.08s|train_loss 0.00400312|val_loss 0.00014661
+Epoch 248|time: 3.04s|train_loss 0.00399719|val_loss 0.00014835
+Epoch 249|time: 3.13s|train_loss 0.00403282|val_loss 0.00014663
+Epoch 250|time: 3.08s|train_loss 0.00397125|val_loss 0.00014569
+Epoch 251|time: 3.06s|train_loss 0.00398362|val_loss 0.00014623
+Epoch 252|time: 3.05s|train_loss 0.00399339|val_loss 0.00014604
+Epoch 253|time: 3.26s|train_loss 0.00402635|val_loss 0.00014771
+Epoch 254|time: 3.08s|train_loss 0.00396451|val_loss 0.00014616
+Epoch 255|time: 3.15s|train_loss 0.00399637|val_loss 0.00014712
+Epoch 256|time: 3.11s|train_loss 0.00400215|val_loss 0.00014654
+Epoch 257|time: 3.08s|train_loss 0.00401997|val_loss 0.00014591
+Epoch 258|time: 3.03s|train_loss 0.00396751|val_loss 0.00014916
+Epoch 259|time: 3.08s|train_loss 0.00393273|val_loss 0.00014545
+Epoch 260|time: 3.14s|train_loss 0.00393594|val_loss 0.00014450
+Best validation epoch: 260 Mon May 22 15:34:05 2023
+TEST MAE 0.1745 | std 0.0535 | RMSE 0.2716 | RMSEs 0.2576 | PCC 0.9588 | PCCs 0.9464 | R2 0.9171 | R2s 0.8809 | Var 0.9172 | Vars 0.8834 | Peak 0.0979
+Epoch 261|time: 3.13s|train_loss 0.00396580|val_loss 0.00014479
+Epoch 262|time: 3.06s|train_loss 0.00393411|val_loss 0.00014510
+Epoch 263|time: 3.11s|train_loss 0.00398488|val_loss 0.00014637
+Epoch 264|time: 3.07s|train_loss 0.00404375|val_loss 0.00015333
+Epoch 265|time: 3.04s|train_loss 0.00392144|val_loss 0.00015106
+Epoch 266|time: 3.15s|train_loss 0.00396752|val_loss 0.00014776
+Epoch 267|time: 3.05s|train_loss 0.00392028|val_loss 0.00014488
+Epoch 268|time: 3.16s|train_loss 0.00395638|val_loss 0.00015138
+Epoch 269|time: 3.09s|train_loss 0.00392152|val_loss 0.00015078
+Epoch 270|time: 3.07s|train_loss 0.00394664|val_loss 0.00014564
+Epoch 271|time: 3.04s|train_loss 0.00397001|val_loss 0.00014265
+Best validation epoch: 271 Mon May 22 15:34:39 2023
+TEST MAE 0.1728 | std 0.0536 | RMSE 0.2694 | RMSEs 0.2552 | PCC 0.9594 | PCCs 0.9470 | R2 0.9185 | R2s 0.8833 | Var 0.9185 | Vars 0.8854 | Peak 0.0988
+Epoch 272|time: 3.03s|train_loss 0.00396994|val_loss 0.00014241
+Best validation epoch: 272 Mon May 22 15:34:43 2023
+TEST MAE 0.1729 | std 0.0532 | RMSE 0.2699 | RMSEs 0.2560 | PCC 0.9594 | PCCs 0.9471 | R2 0.9182 | R2s 0.8824 | Var 0.9182 | Vars 0.8850 | Peak 0.0984
+Epoch 273|time: 3.08s|train_loss 0.00407531|val_loss 0.00015279
+Epoch 274|time: 3.04s|train_loss 0.00394111|val_loss 0.00015402
+Epoch 275|time: 3.07s|train_loss 0.00393800|val_loss 0.00014258
+Epoch 276|time: 3.02s|train_loss 0.00394539|val_loss 0.00014852
+Epoch 277|time: 3.07s|train_loss 0.00393604|val_loss 0.00014755
+Epoch 278|time: 3.05s|train_loss 0.00387183|val_loss 0.00014472
+Epoch 279|time: 3.05s|train_loss 0.00393101|val_loss 0.00014393
+Epoch 280|time: 3.12s|train_loss 0.00385500|val_loss 0.00014585
+Epoch 281|time: 3.12s|train_loss 0.00387222|val_loss 0.00014813
+Epoch 282|time: 3.08s|train_loss 0.00390554|val_loss 0.00014579
+Epoch 283|time: 3.02s|train_loss 0.00398529|val_loss 0.00014387
+Epoch 284|time: 3.03s|train_loss 0.00384656|val_loss 0.00014668
+Epoch 285|time: 3.04s|train_loss 0.00392338|val_loss 0.00014600
+Epoch 286|time: 3.10s|train_loss 0.00388754|val_loss 0.00014452
+Epoch 287|time: 3.03s|train_loss 0.00384465|val_loss 0.00014502
+Epoch 288|time: 3.03s|train_loss 0.00394737|val_loss 0.00014757
+Epoch 289|time: 3.02s|train_loss 0.00383741|val_loss 0.00014520
+Epoch 290|time: 3.02s|train_loss 0.00384819|val_loss 0.00014372
+Epoch 291|time: 3.09s|train_loss 0.00384945|val_loss 0.00014890
+Epoch 292|time: 3.07s|train_loss 0.00389813|val_loss 0.00014720
+Epoch 293|time: 3.01s|train_loss 0.00381189|val_loss 0.00014370
+Epoch 294|time: 3.02s|train_loss 0.00388293|val_loss 0.00014549
+Epoch 295|time: 3.26s|train_loss 0.00394838|val_loss 0.00014964
+Epoch 296|time: 3.04s|train_loss 0.00384326|val_loss 0.00014681
+Epoch 297|time: 3.03s|train_loss 0.00387184|val_loss 0.00014364
+Epoch 298|time: 3.09s|train_loss 0.00380276|val_loss 0.00014344
+Epoch 299|time: 3.03s|train_loss 0.00388163|val_loss 0.00014542
+Epoch 300|time: 3.14s|train_loss 0.00388844|val_loss 0.00014657
+Epoch 301|time: 3.03s|train_loss 0.00378239|val_loss 0.00014306
+Epoch 302|time: 3.03s|train_loss 0.00393187|val_loss 0.00014350
+Epoch 303|time: 3.02s|train_loss 0.00389585|val_loss 0.00014633
+Epoch 304|time: 3.03s|train_loss 0.00378905|val_loss 0.00014991
+Epoch 305|time: 3.16s|train_loss 0.00381552|val_loss 0.00014340
+Epoch 306|time: 3.08s|train_loss 0.00375918|val_loss 0.00014341
+Epoch 307|time: 3.03s|train_loss 0.00381080|val_loss 0.00014227
+Best validation epoch: 307 Mon May 22 15:36:31 2023
+TEST MAE 0.1713 | std 0.0516 | RMSE 0.2693 | RMSEs 0.2555 | PCC 0.9603 | PCCs 0.9475 | R2 0.9186 | R2s 0.8825 | Var 0.9187 | Vars 0.8846 | Peak 0.0982
+Epoch 308|time: 3.21s|train_loss 0.00381441|val_loss 0.00014590
+Epoch 309|time: 3.02s|train_loss 0.00385210|val_loss 0.00014640
+Epoch 310|time: 3.04s|train_loss 0.00375760|val_loss 0.00014539
+Epoch 311|time: 3.07s|train_loss 0.00373941|val_loss 0.00014431
+Epoch 312|time: 3.17s|train_loss 0.00373441|val_loss 0.00014360
+Epoch 313|time: 3.70s|train_loss 0.00374017|val_loss 0.00014430
+Epoch 314|time: 3.14s|train_loss 0.00371929|val_loss 0.00014422
+Epoch 315|time: 3.63s|train_loss 0.00384688|val_loss 0.00014370
+Epoch 316|time: 3.29s|train_loss 0.00372150|val_loss 0.00014570
+Epoch 317|time: 3.22s|train_loss 0.00372309|val_loss 0.00014361
+Epoch 318|time: 3.27s|train_loss 0.00371487|val_loss 0.00014416
+Epoch 319|time: 3.30s|train_loss 0.00371279|val_loss 0.00014260
+Epoch 320|time: 3.46s|train_loss 0.00370280|val_loss 0.00014297
+Epoch 321|time: 3.12s|train_loss 0.00368996|val_loss 0.00014643
+Epoch 322|time: 3.10s|train_loss 0.00376495|val_loss 0.00014407
+Epoch 323|time: 3.46s|train_loss 0.00371458|val_loss 0.00014295
+Epoch 324|time: 3.11s|train_loss 0.00372220|val_loss 0.00014244
+Epoch 325|time: 3.15s|train_loss 0.00377303|val_loss 0.00015635
+Epoch 326|time: 3.40s|train_loss 0.00371062|val_loss 0.00015381
+Epoch 327|time: 3.42s|train_loss 0.00387153|val_loss 0.00014244
+Epoch 328|time: 3.11s|train_loss 0.00375455|val_loss 0.00014427
+Epoch 329|time: 3.48s|train_loss 0.00370599|val_loss 0.00014537
+Epoch 330|time: 3.54s|train_loss 0.00368486|val_loss 0.00014633
+Epoch 331|time: 3.30s|train_loss 0.00366604|val_loss 0.00014212
+Best validation epoch: 331 Mon May 22 15:37:50 2023
+TEST MAE 0.1671 | std 0.0509 | RMSE 0.2608 | RMSEs 0.2476 | PCC 0.9616 | PCCs 0.9485 | R2 0.9236 | R2s 0.8898 | Var 0.9236 | Vars 0.8914 | Peak 0.0950
+Epoch 332|time: 3.25s|train_loss 0.00366382|val_loss 0.00014841
+Epoch 333|time: 3.15s|train_loss 0.00365189|val_loss 0.00014581
+Epoch 334|time: 3.08s|train_loss 0.00365250|val_loss 0.00014204
+Best validation epoch: 334 Mon May 22 15:38:01 2023
+TEST MAE 0.1693 | std 0.0517 | RMSE 0.2643 | RMSEs 0.2512 | PCC 0.9612 | PCCs 0.9480 | R2 0.9215 | R2s 0.8861 | Var 0.9221 | Vars 0.8894 | Peak 0.0956
+Epoch 335|time: 3.13s|train_loss 0.00367116|val_loss 0.00014416
+Epoch 336|time: 3.46s|train_loss 0.00363739|val_loss 0.00014234
+Epoch 337|time: 3.10s|train_loss 0.00366256|val_loss 0.00014189
+Best validation epoch: 337 Mon May 22 15:38:11 2023
+TEST MAE 0.1678 | std 0.0513 | RMSE 0.2627 | RMSEs 0.2494 | PCC 0.9615 | PCCs 0.9485 | R2 0.9225 | R2s 0.8880 | Var 0.9226 | Vars 0.8901 | Peak 0.0955
+Epoch 338|time: 3.15s|train_loss 0.00362747|val_loss 0.00014310
+Epoch 339|time: 3.31s|train_loss 0.00369661|val_loss 0.00014235
+Epoch 340|time: 3.51s|train_loss 0.00364163|val_loss 0.00014204
+Epoch 341|time: 3.09s|train_loss 0.00368338|val_loss 0.00014338
+Epoch 342|time: 3.18s|train_loss 0.00378578|val_loss 0.00014150
+Best validation epoch: 342 Mon May 22 15:38:29 2023
+TEST MAE 0.1667 | std 0.0500 | RMSE 0.2603 | RMSEs 0.2474 | PCC 0.9620 | PCCs 0.9491 | R2 0.9239 | R2s 0.8897 | Var 0.9239 | Vars 0.8913 | Peak 0.0939
+Epoch 343|time: 3.23s|train_loss 0.00378354|val_loss 0.00014277
+Epoch 344|time: 3.09s|train_loss 0.00368696|val_loss 0.00014664
+Epoch 345|time: 3.09s|train_loss 0.00365769|val_loss 0.00014133
+Best validation epoch: 345 Mon May 22 15:38:39 2023
+TEST MAE 0.1660 | std 0.0502 | RMSE 0.2597 | RMSEs 0.2467 | PCC 0.9621 | PCCs 0.9490 | R2 0.9242 | R2s 0.8902 | Var 0.9243 | Vars 0.8920 | Peak 0.0941
+Epoch 346|time: 3.15s|train_loss 0.00363852|val_loss 0.00014262
+Epoch 347|time: 3.12s|train_loss 0.00366802|val_loss 0.00014239
+Epoch 348|time: 3.09s|train_loss 0.00362980|val_loss 0.00014180
+Epoch 349|time: 3.34s|train_loss 0.00360758|val_loss 0.00014390
+Epoch 350|time: 3.17s|train_loss 0.00361015|val_loss 0.00014602
+Epoch 351|time: 3.19s|train_loss 0.00360407|val_loss 0.00014230
+Epoch 352|time: 3.22s|train_loss 0.00366429|val_loss 0.00014128
+Best validation epoch: 352 Mon May 22 15:39:02 2023
+TEST MAE 0.1673 | std 0.0512 | RMSE 0.2620 | RMSEs 0.2488 | PCC 0.9616 | PCCs 0.9484 | R2 0.9229 | R2s 0.8885 | Var 0.9230 | Vars 0.8905 | Peak 0.0956
+Epoch 353|time: 3.50s|train_loss 0.00360813|val_loss 0.00014168
+Epoch 354|time: 3.97s|train_loss 0.00369763|val_loss 0.00014326
+Epoch 355|time: 3.29s|train_loss 0.00361104|val_loss 0.00014286
+Epoch 356|time: 3.37s|train_loss 0.00357991|val_loss 0.00014243
+Epoch 357|time: 3.19s|train_loss 0.00359479|val_loss 0.00014157
+Epoch 358|time: 3.26s|train_loss 0.00369989|val_loss 0.00014167
+Epoch 359|time: 3.32s|train_loss 0.00354901|val_loss 0.00014147
+Epoch 360|time: 3.47s|train_loss 0.00358638|val_loss 0.00014099
+Best validation epoch: 360 Mon May 22 15:39:30 2023
+TEST MAE 0.1663 | std 0.0511 | RMSE 0.2595 | RMSEs 0.2465 | PCC 0.9620 | PCCs 0.9487 | R2 0.9244 | R2s 0.8904 | Var 0.9245 | Vars 0.8925 | Peak 0.0945
+Epoch 361|time: 3.18s|train_loss 0.00363505|val_loss 0.00014215
+Epoch 362|time: 3.23s|train_loss 0.00354888|val_loss 0.00014098
+Best validation epoch: 362 Mon May 22 15:39:37 2023
+TEST MAE 0.1662 | std 0.0513 | RMSE 0.2603 | RMSEs 0.2471 | PCC 0.9621 | PCCs 0.9493 | R2 0.9239 | R2s 0.8901 | Var 0.9239 | Vars 0.8914 | Peak 0.0947
+Epoch 363|time: 3.36s|train_loss 0.00362660|val_loss 0.00014131
+Epoch 364|time: 3.43s|train_loss 0.00354451|val_loss 0.00014038
+Best validation epoch: 364 Mon May 22 15:39:45 2023
+TEST MAE 0.1672 | std 0.0504 | RMSE 0.2633 | RMSEs 0.2501 | PCC 0.9619 | PCCs 0.9498 | R2 0.9221 | R2s 0.8871 | Var 0.9223 | Vars 0.8892 | Peak 0.0944
+Epoch 365|time: 3.16s|train_loss 0.00359958|val_loss 0.00014165
+Epoch 366|time: 3.17s|train_loss 0.00360888|val_loss 0.00014414
+Epoch 367|time: 3.27s|train_loss 0.00352727|val_loss 0.00014498
+Epoch 368|time: 3.19s|train_loss 0.00359379|val_loss 0.00014625
+Epoch 369|time: 3.39s|train_loss 0.00352645|val_loss 0.00014080
+Epoch 370|time: 3.23s|train_loss 0.00360621|val_loss 0.00014042
+Epoch 371|time: 3.42s|train_loss 0.00360860|val_loss 0.00014044
+Epoch 372|time: 3.30s|train_loss 0.00363174|val_loss 0.00014097
+Epoch 373|time: 3.15s|train_loss 0.00368846|val_loss 0.00014053
+Epoch 374|time: 3.22s|train_loss 0.00354539|val_loss 0.00014078
+Epoch 375|time: 3.16s|train_loss 0.00354110|val_loss 0.00014616
+Epoch 376|time: 3.23s|train_loss 0.00354176|val_loss 0.00013981
+Best validation epoch: 376 Mon May 22 15:40:25 2023
+TEST MAE 0.1688 | std 0.0510 | RMSE 0.2641 | RMSEs 0.2511 | PCC 0.9616 | PCCs 0.9490 | R2 0.9216 | R2s 0.8860 | Var 0.9218 | Vars 0.8884 | Peak 0.0951
+Epoch 377|time: 3.24s|train_loss 0.00349584|val_loss 0.00014158
+Epoch 378|time: 3.16s|train_loss 0.00356324|val_loss 0.00014223
+Epoch 379|time: 3.16s|train_loss 0.00354202|val_loss 0.00014434
+Epoch 380|time: 3.14s|train_loss 0.00357843|val_loss 0.00014516
+Epoch 381|time: 3.28s|train_loss 0.00351627|val_loss 0.00014180
+Epoch 382|time: 3.59s|train_loss 0.00351652|val_loss 0.00014243
+Epoch 383|time: 3.48s|train_loss 0.00348976|val_loss 0.00014080
+Epoch 384|time: 3.17s|train_loss 0.00350317|val_loss 0.00014689
+Epoch 385|time: 3.25s|train_loss 0.00348432|val_loss 0.00014870
+Epoch 386|time: 3.21s|train_loss 0.00347313|val_loss 0.00014286
+Epoch 387|time: 3.17s|train_loss 0.00347092|val_loss 0.00014369
+Epoch 388|time: 3.21s|train_loss 0.00344056|val_loss 0.00014068
+Epoch 389|time: 3.79s|train_loss 0.00346331|val_loss 0.00013965
+Best validation epoch: 389 Mon May 22 15:41:08 2023
+TEST MAE 0.1638 | std 0.0506 | RMSE 0.2562 | RMSEs 0.2434 | PCC 0.9628 | PCCs 0.9491 | R2 0.9263 | R2s 0.8933 | Var 0.9264 | Vars 0.8945 | Peak 0.0951
+Epoch 390|time: 3.74s|train_loss 0.00343872|val_loss 0.00013920
+Best validation epoch: 390 Mon May 22 15:41:13 2023
+TEST MAE 0.1645 | std 0.0503 | RMSE 0.2584 | RMSEs 0.2456 | PCC 0.9625 | PCCs 0.9491 | R2 0.9250 | R2s 0.8912 | Var 0.9250 | Vars 0.8928 | Peak 0.0944
+Epoch 391|time: 3.51s|train_loss 0.00343712|val_loss 0.00013930
+Epoch 392|time: 3.59s|train_loss 0.00347371|val_loss 0.00014393
+Epoch 393|time: 3.61s|train_loss 0.00343572|val_loss 0.00015082
+Epoch 394|time: 3.26s|train_loss 0.00343973|val_loss 0.00013957
+Epoch 395|time: 3.18s|train_loss 0.00348546|val_loss 0.00014043
+Epoch 396|time: 3.35s|train_loss 0.00360311|val_loss 0.00014018
+Epoch 397|time: 3.17s|train_loss 0.00343261|val_loss 0.00014320
+Epoch 398|time: 3.16s|train_loss 0.00344769|val_loss 0.00014562
+Epoch 399|time: 3.16s|train_loss 0.00344110|val_loss 0.00014175
+Epoch 400|time: 3.08s|train_loss 0.00346482|val_loss 0.00014181
+Epoch 401|time: 3.07s|train_loss 0.00342349|val_loss 0.00013988
+Epoch 402|time: 3.24s|train_loss 0.00357431|val_loss 0.00013915
+Best validation epoch: 402 Mon May 22 15:41:53 2023
+TEST MAE 0.1645 | std 0.0510 | RMSE 0.2560 | RMSEs 0.2433 | PCC 0.9630 | PCCs 0.9494 | R2 0.9264 | R2s 0.8934 | Var 0.9267 | Vars 0.8948 | Peak 0.0949
+Epoch 403|time: 3.07s|train_loss 0.00337273|val_loss 0.00013936
+Epoch 404|time: 3.19s|train_loss 0.00342103|val_loss 0.00014003
+Epoch 405|time: 3.18s|train_loss 0.00341138|val_loss 0.00013986
+Epoch 406|time: 3.13s|train_loss 0.00354090|val_loss 0.00013942
+Epoch 407|time: 3.23s|train_loss 0.00342689|val_loss 0.00013935
+Epoch 408|time: 3.15s|train_loss 0.00341701|val_loss 0.00014087
+Epoch 409|time: 3.09s|train_loss 0.00339399|val_loss 0.00014735
+Epoch 410|time: 3.17s|train_loss 0.00340768|val_loss 0.00013960
+Epoch 411|time: 3.10s|train_loss 0.00338385|val_loss 0.00013881
+Best validation epoch: 411 Mon May 22 15:42:22 2023
+TEST MAE 0.1629 | std 0.0488 | RMSE 0.2560 | RMSEs 0.2435 | PCC 0.9634 | PCCs 0.9504 | R2 0.9264 | R2s 0.8927 | Var 0.9264 | Vars 0.8943 | Peak 0.0924
+Epoch 412|time: 3.10s|train_loss 0.00336258|val_loss 0.00014410
+Epoch 413|time: 3.00s|train_loss 0.00337517|val_loss 0.00014562
+Epoch 414|time: 3.00s|train_loss 0.00340015|val_loss 0.00014209
+Epoch 415|time: 3.03s|train_loss 0.00342100|val_loss 0.00013919
+Epoch 416|time: 3.02s|train_loss 0.00336615|val_loss 0.00013961
+Epoch 417|time: 3.01s|train_loss 0.00334706|val_loss 0.00014006
+Epoch 418|time: 3.16s|train_loss 0.00346249|val_loss 0.00014478
+Epoch 419|time: 3.17s|train_loss 0.00334487|val_loss 0.00014445
+Epoch 420|time: 3.23s|train_loss 0.00349563|val_loss 0.00013972
+Epoch 421|time: 3.35s|train_loss 0.00380241|val_loss 0.00014379
+Epoch 422|time: 3.45s|train_loss 0.00365385|val_loss 0.00014235
+Epoch 423|time: 3.33s|train_loss 0.00349491|val_loss 0.00014092
+Epoch 424|time: 3.15s|train_loss 0.00352853|val_loss 0.00013842
+Best validation epoch: 424 Mon May 22 15:43:04 2023
+TEST MAE 0.1647 | std 0.0504 | RMSE 0.2571 | RMSEs 0.2446 | PCC 0.9630 | PCCs 0.9500 | R2 0.9258 | R2s 0.8920 | Var 0.9258 | Vars 0.8933 | Peak 0.0933
+Epoch 425|time: 3.13s|train_loss 0.00334029|val_loss 0.00013829
+Best validation epoch: 425 Mon May 22 15:43:08 2023
+TEST MAE 0.1630 | std 0.0496 | RMSE 0.2545 | RMSEs 0.2422 | PCC 0.9634 | PCCs 0.9502 | R2 0.9273 | R2s 0.8940 | Var 0.9273 | Vars 0.8953 | Peak 0.0925
+Epoch 426|time: 3.62s|train_loss 0.00348509|val_loss 0.00014114
+Epoch 427|time: 3.36s|train_loss 0.00350041|val_loss 0.00014520
+Epoch 428|time: 3.18s|train_loss 0.00335753|val_loss 0.00013907
+Epoch 429|time: 3.10s|train_loss 0.00336775|val_loss 0.00013886
+Epoch 430|time: 3.16s|train_loss 0.00337889|val_loss 0.00013859
+Epoch 431|time: 3.16s|train_loss 0.00327955|val_loss 0.00013805
+Best validation epoch: 431 Mon May 22 15:43:29 2023
+TEST MAE 0.1625 | std 0.0492 | RMSE 0.2538 | RMSEs 0.2415 | PCC 0.9637 | PCCs 0.9505 | R2 0.9276 | R2s 0.8944 | Var 0.9277 | Vars 0.8960 | Peak 0.0917
+Epoch 432|time: 3.27s|train_loss 0.00337785|val_loss 0.00013868
+Epoch 433|time: 3.37s|train_loss 0.00333643|val_loss 0.00013930
+Epoch 434|time: 3.45s|train_loss 0.00336140|val_loss 0.00013841
+Epoch 435|time: 3.59s|train_loss 0.00330923|val_loss 0.00013736
+Best validation epoch: 435 Mon May 22 15:43:43 2023
+TEST MAE 0.1644 | std 0.0507 | RMSE 0.2563 | RMSEs 0.2438 | PCC 0.9630 | PCCs 0.9496 | R2 0.9262 | R2s 0.8925 | Var 0.9262 | Vars 0.8937 | Peak 0.0936
+Epoch 436|time: 3.48s|train_loss 0.00334524|val_loss 0.00014116
+Epoch 437|time: 3.60s|train_loss 0.00330559|val_loss 0.00013909
+Epoch 438|time: 3.56s|train_loss 0.00335927|val_loss 0.00013818
+Epoch 439|time: 3.46s|train_loss 0.00329514|val_loss 0.00013916
+Epoch 440|time: 3.43s|train_loss 0.00333486|val_loss 0.00013871
+Epoch 441|time: 3.55s|train_loss 0.00328025|val_loss 0.00013819
+Epoch 442|time: 3.44s|train_loss 0.00329849|val_loss 0.00014493
+Epoch 443|time: 3.50s|train_loss 0.00329694|val_loss 0.00014410
+Epoch 444|time: 3.37s|train_loss 0.00336152|val_loss 0.00014764
+Epoch 445|time: 3.48s|train_loss 0.00327153|val_loss 0.00014036
+Epoch 446|time: 3.38s|train_loss 0.00334572|val_loss 0.00013917
+Epoch 447|time: 3.39s|train_loss 0.00328095|val_loss 0.00014216
+Epoch 448|time: 3.37s|train_loss 0.00328578|val_loss 0.00013873
+Epoch 449|time: 3.43s|train_loss 0.00324633|val_loss 0.00013778
+Epoch 450|time: 3.49s|train_loss 0.00333218|val_loss 0.00013907
+Epoch 451|time: 3.44s|train_loss 0.00331571|val_loss 0.00013788
+Epoch 452|time: 3.41s|train_loss 0.00324572|val_loss 0.00013791
+Epoch 453|time: 3.37s|train_loss 0.00336667|val_loss 0.00014138
+Epoch 454|time: 3.38s|train_loss 0.00323779|val_loss 0.00013930
+Epoch 455|time: 3.55s|train_loss 0.00325048|val_loss 0.00013697
+Best validation epoch: 455 Mon May 22 15:44:53 2023
+TEST MAE 0.1631 | std 0.0490 | RMSE 0.2558 | RMSEs 0.2435 | PCC 0.9636 | PCCs 0.9507 | R2 0.9265 | R2s 0.8925 | Var 0.9265 | Vars 0.8941 | Peak 0.0924
+Epoch 456|time: 3.36s|train_loss 0.00321961|val_loss 0.00014356
+Epoch 457|time: 3.68s|train_loss 0.00328681|val_loss 0.00014387
+Epoch 458|time: 3.64s|train_loss 0.00323782|val_loss 0.00014130
+Epoch 459|time: 3.56s|train_loss 0.00323072|val_loss 0.00013737
+Epoch 460|time: 3.71s|train_loss 0.00320664|val_loss 0.00013791
+Epoch 461|time: 3.53s|train_loss 0.00327406|val_loss 0.00013758
+Epoch 462|time: 3.28s|train_loss 0.00332896|val_loss 0.00013805
+Epoch 463|time: 3.30s|train_loss 0.00318493|val_loss 0.00013868
+Epoch 464|time: 3.38s|train_loss 0.00328151|val_loss 0.00013809
+Epoch 465|time: 3.35s|train_loss 0.00324809|val_loss 0.00013659
+Best validation epoch: 465 Mon May 22 15:45:29 2023
+TEST MAE 0.1640 | std 0.0488 | RMSE 0.2561 | RMSEs 0.2445 | PCC 0.9641 | PCCs 0.9508 | R2 0.9263 | R2s 0.8910 | Var 0.9275 | Vars 0.8953 | Peak 0.0906
+Epoch 466|time: 3.17s|train_loss 0.00321447|val_loss 0.00013801
+Epoch 467|time: 3.22s|train_loss 0.00319736|val_loss 0.00013714
+Epoch 468|time: 3.48s|train_loss 0.00322326|val_loss 0.00013710
+Epoch 469|time: 3.20s|train_loss 0.00328399|val_loss 0.00013662
+Epoch 470|time: 3.15s|train_loss 0.00320814|val_loss 0.00013742
+Epoch 471|time: 3.17s|train_loss 0.00331343|val_loss 0.00013924
+Epoch 472|time: 3.28s|train_loss 0.00323271|val_loss 0.00013753
+Epoch 473|time: 3.25s|train_loss 0.00322665|val_loss 0.00013751
+Epoch 474|time: 3.16s|train_loss 0.00329700|val_loss 0.00013887
+Epoch 475|time: 3.14s|train_loss 0.00322398|val_loss 0.00014466
+Epoch 476|time: 3.20s|train_loss 0.00331139|val_loss 0.00013635
+Best validation epoch: 476 Mon May 22 15:46:05 2023
+TEST MAE 0.1643 | std 0.0496 | RMSE 0.2577 | RMSEs 0.2457 | PCC 0.9637 | PCCs 0.9506 | R2 0.9254 | R2s 0.8901 | Var 0.9263 | Vars 0.8939 | Peak 0.0921
+Epoch 477|time: 3.14s|train_loss 0.00330705|val_loss 0.00013983
+Epoch 478|time: 3.25s|train_loss 0.00333255|val_loss 0.00013663
+Epoch 479|time: 3.17s|train_loss 0.00317856|val_loss 0.00013939
+Epoch 480|time: 3.16s|train_loss 0.00318859|val_loss 0.00013868
+Epoch 481|time: 3.30s|train_loss 0.00318899|val_loss 0.00013669
+Epoch 482|time: 3.22s|train_loss 0.00319616|val_loss 0.00013572
+Best validation epoch: 482 Mon May 22 15:46:25 2023
+TEST MAE 0.1663 | std 0.0501 | RMSE 0.2602 | RMSEs 0.2483 | PCC 0.9636 | PCCs 0.9509 | R2 0.9240 | R2s 0.8875 | Var 0.9248 | Vars 0.8911 | Peak 0.0924
+Epoch 483|time: 3.09s|train_loss 0.00321864|val_loss 0.00013659
+Epoch 484|time: 3.35s|train_loss 0.00317275|val_loss 0.00013978
+Epoch 485|time: 3.25s|train_loss 0.00324443|val_loss 0.00014008
+Epoch 486|time: 3.32s|train_loss 0.00336808|val_loss 0.00014156
+Epoch 487|time: 3.30s|train_loss 0.00317099|val_loss 0.00013684
+Epoch 488|time: 3.31s|train_loss 0.00319228|val_loss 0.00013783
+Epoch 489|time: 3.01s|train_loss 0.00333893|val_loss 0.00013825
+Epoch 490|time: 3.05s|train_loss 0.00323653|val_loss 0.00013717
+Epoch 491|time: 3.22s|train_loss 0.00326663|val_loss 0.00014357
+Epoch 492|time: 3.35s|train_loss 0.00319468|val_loss 0.00014544
+Epoch 493|time: 3.03s|train_loss 0.00323679|val_loss 0.00014163
+Epoch 494|time: 3.23s|train_loss 0.00315026|val_loss 0.00013790
+Epoch 495|time: 3.09s|train_loss 0.00324048|val_loss 0.00013866
+Epoch 496|time: 3.16s|train_loss 0.00320448|val_loss 0.00013631
+Epoch 497|time: 3.05s|train_loss 0.00326072|val_loss 0.00013684
+Epoch 498|time: 3.03s|train_loss 0.00321084|val_loss 0.00013634
+Epoch 499|time: 3.02s|train_loss 0.00323499|val_loss 0.00013607
+Epoch 500|time: 3.16s|train_loss 0.00324161|val_loss 0.00013642
+Final evaluation
+TEST MAE 0.1663 | std 0.0501 | RMSE 0.2602 | RMSEs 0.2483 | PCC 0.9636 | PCCs 0.9509 | R2 0.9240 | R2s 0.8875 | Var 0.9248 | Vars 0.8911 | Peak 0.0924

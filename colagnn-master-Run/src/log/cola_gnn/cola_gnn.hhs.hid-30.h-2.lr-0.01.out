@@ -1,0 +1,395 @@
+--------Parameters--------
+Namespace(batch=32, bi=False, check_point=1, cuda=False, dataset='us_hhs', dropout=0.2, epilambda=0.2, epochs=1500, gpu=3, hidsp=15, horizon=2, k=10, lamda=0.01, lr=0.01, model='cola_gnn', mylog=True, n_hidden=30, n_layer=1, patience=200, rnn_model='RNN', save_dir='save', seed=42, shuffle=False, sim_mat='us_hhs-adj', test=0.2, train=0.6, val=0.2, weight_decay=0.0005, window=20)
+--------------------------
+data shape (364, 10)
+364 10
+(364, 10)
+size of train/val/test sets 197 73 73
+#params: 3623
+begin training
+Epoch   1|time: 0.10s|train_loss 0.00116018|val_loss 0.00091782
+Best validation epoch: 1 Sat May 13 00:56:33 2023
+TEST MAE 1.0579 std 0.3168 RMSE 1.1927 RMSEs 1.1447 PCC 0.7830 PCCs 0.7052 R2 -0.5981 R2s -1.5170 Var 0.5385 Vars 0.4855 Peak 0.3082
+Epoch   2|time: 0.09s|train_loss 0.00050745|val_loss 0.00053570
+Best validation epoch: 2 Sat May 13 00:56:34 2023
+TEST MAE 0.5420 std 0.1429 RMSE 0.6943 RMSEs 0.6736 PCC 0.8713 PCCs 0.8170 R2 0.4585 R2s 0.1391 Var 0.7591 Vars 0.6614 Peak 0.2661
+Epoch   3|time: 0.09s|train_loss 0.00038875|val_loss 0.00031304
+Best validation epoch: 3 Sat May 13 00:56:34 2023
+TEST MAE 0.3284 std 0.0842 RMSE 0.5171 RMSEs 0.5023 PCC 0.8733 PCCs 0.8023 R2 0.6996 R2s 0.5353 Var 0.7508 Vars 0.6238 Peak 0.2145
+Epoch   4|time: 0.09s|train_loss 0.00026109|val_loss 0.00046398
+Epoch   5|time: 0.09s|train_loss 0.00031660|val_loss 0.00022912
+Best validation epoch: 5 Sat May 13 00:56:34 2023
+TEST MAE 0.2673 std 0.0597 RMSE 0.3882 RMSEs 0.3775 PCC 0.9138 PCCs 0.8755 R2 0.8307 R2s 0.7358 Var 0.8326 Vars 0.7563 Peak 0.1398
+Epoch   6|time: 0.09s|train_loss 0.00027229|val_loss 0.00026094
+Epoch   7|time: 0.09s|train_loss 0.00024596|val_loss 0.00021811
+Best validation epoch: 7 Sat May 13 00:56:34 2023
+TEST MAE 0.2592 std 0.0750 RMSE 0.4100 RMSEs 0.3934 PCC 0.9240 PCCs 0.8883 R2 0.8111 R2s 0.7221 Var 0.8469 Vars 0.7796 Peak 0.1638
+Epoch   8|time: 0.09s|train_loss 0.00020972|val_loss 0.00020101
+Best validation epoch: 8 Sat May 13 00:56:34 2023
+TEST MAE 0.2457 std 0.0643 RMSE 0.3587 RMSEs 0.3470 PCC 0.9259 PCCs 0.8924 R2 0.8554 R2s 0.7793 Var 0.8570 Vars 0.7911 Peak 0.1327
+Epoch   9|time: 0.09s|train_loss 0.00020435|val_loss 0.00029496
+Epoch  10|time: 0.09s|train_loss 0.00022947|val_loss 0.00021753
+Epoch  11|time: 0.09s|train_loss 0.00020721|val_loss 0.00024472
+Epoch  12|time: 0.09s|train_loss 0.00020968|val_loss 0.00020066
+Best validation epoch: 12 Sat May 13 00:56:35 2023
+TEST MAE 0.2648 std 0.0700 RMSE 0.3683 RMSEs 0.3564 PCC 0.9291 PCCs 0.8961 R2 0.8477 R2s 0.7664 Var 0.8620 Vars 0.7989 Peak 0.1329
+Epoch  13|time: 0.09s|train_loss 0.00019070|val_loss 0.00020161
+Epoch  14|time: 0.09s|train_loss 0.00019752|val_loss 0.00019348
+Best validation epoch: 14 Sat May 13 00:56:35 2023
+TEST MAE 0.2404 std 0.0708 RMSE 0.3809 RMSEs 0.3648 PCC 0.9288 PCCs 0.8953 R2 0.8370 R2s 0.7619 Var 0.8586 Vars 0.7953 Peak 0.1517
+Epoch  15|time: 0.09s|train_loss 0.00019332|val_loss 0.00020656
+Epoch  16|time: 0.09s|train_loss 0.00020282|val_loss 0.00018183
+Best validation epoch: 16 Sat May 13 00:56:35 2023
+TEST MAE 0.2287 std 0.0602 RMSE 0.3464 RMSEs 0.3332 PCC 0.9310 PCCs 0.9003 R2 0.8652 R2s 0.7980 Var 0.8652 Vars 0.8035 Peak 0.1292
+Epoch  17|time: 0.09s|train_loss 0.00020197|val_loss 0.00020126
+Epoch  18|time: 0.09s|train_loss 0.00017226|val_loss 0.00019605
+Epoch  19|time: 0.09s|train_loss 0.00017751|val_loss 0.00019425
+Epoch  20|time: 0.09s|train_loss 0.00017035|val_loss 0.00020457
+Epoch  21|time: 0.09s|train_loss 0.00017494|val_loss 0.00023477
+Epoch  22|time: 0.09s|train_loss 0.00018255|val_loss 0.00018287
+Epoch  23|time: 0.09s|train_loss 0.00018886|val_loss 0.00018383
+Epoch  24|time: 0.09s|train_loss 0.00018975|val_loss 0.00018996
+Epoch  25|time: 0.09s|train_loss 0.00017973|val_loss 0.00018238
+Epoch  26|time: 0.09s|train_loss 0.00018540|val_loss 0.00017782
+Best validation epoch: 26 Sat May 13 00:56:36 2023
+TEST MAE 0.2169 std 0.0594 RMSE 0.3335 RMSEs 0.3198 PCC 0.9355 PCCs 0.9062 R2 0.8751 R2s 0.8144 Var 0.8751 Vars 0.8176 Peak 0.1280
+Epoch  27|time: 0.09s|train_loss 0.00016828|val_loss 0.00017740
+Best validation epoch: 27 Sat May 13 00:56:36 2023
+TEST MAE 0.2148 std 0.0601 RMSE 0.3338 RMSEs 0.3197 PCC 0.9357 PCCs 0.9069 R2 0.8748 R2s 0.8154 Var 0.8754 Vars 0.8177 Peak 0.1295
+Epoch  28|time: 0.09s|train_loss 0.00016366|val_loss 0.00021944
+Epoch  29|time: 0.09s|train_loss 0.00017348|val_loss 0.00017616
+Best validation epoch: 29 Sat May 13 00:56:36 2023
+TEST MAE 0.2256 std 0.0619 RMSE 0.3384 RMSEs 0.3253 PCC 0.9354 PCCs 0.9065 R2 0.8713 R2s 0.8076 Var 0.8736 Vars 0.8155 Peak 0.1259
+Epoch  30|time: 0.09s|train_loss 0.00017170|val_loss 0.00019886
+Epoch  31|time: 0.09s|train_loss 0.00017086|val_loss 0.00019044
+Epoch  32|time: 0.09s|train_loss 0.00017352|val_loss 0.00018742
+Epoch  33|time: 0.09s|train_loss 0.00017678|val_loss 0.00018210
+Epoch  34|time: 0.09s|train_loss 0.00017310|val_loss 0.00018512
+Epoch  35|time: 0.09s|train_loss 0.00017525|val_loss 0.00026290
+Epoch  36|time: 0.09s|train_loss 0.00017667|val_loss 0.00019444
+Epoch  37|time: 0.09s|train_loss 0.00017214|val_loss 0.00018801
+Epoch  38|time: 0.09s|train_loss 0.00017803|val_loss 0.00018677
+Epoch  39|time: 0.09s|train_loss 0.00017180|val_loss 0.00024457
+Epoch  40|time: 0.09s|train_loss 0.00019283|val_loss 0.00024669
+Epoch  41|time: 0.09s|train_loss 0.00019879|val_loss 0.00022496
+Epoch  42|time: 0.09s|train_loss 0.00020806|val_loss 0.00020502
+Epoch  43|time: 0.09s|train_loss 0.00022146|val_loss 0.00019812
+Epoch  44|time: 0.09s|train_loss 0.00017568|val_loss 0.00020251
+Epoch  45|time: 0.09s|train_loss 0.00017644|val_loss 0.00019092
+Epoch  46|time: 0.09s|train_loss 0.00021784|val_loss 0.00021783
+Epoch  47|time: 0.09s|train_loss 0.00018733|val_loss 0.00019496
+Epoch  48|time: 0.09s|train_loss 0.00018902|val_loss 0.00018751
+Epoch  49|time: 0.09s|train_loss 0.00017689|val_loss 0.00018562
+Epoch  50|time: 0.09s|train_loss 0.00016738|val_loss 0.00019350
+Epoch  51|time: 0.09s|train_loss 0.00017283|val_loss 0.00018345
+Epoch  52|time: 0.09s|train_loss 0.00017361|val_loss 0.00018227
+Epoch  53|time: 0.09s|train_loss 0.00018466|val_loss 0.00019181
+Epoch  54|time: 0.09s|train_loss 0.00018941|val_loss 0.00017872
+Epoch  55|time: 0.09s|train_loss 0.00017411|val_loss 0.00018321
+Epoch  56|time: 0.09s|train_loss 0.00018029|val_loss 0.00019815
+Epoch  57|time: 0.09s|train_loss 0.00017906|val_loss 0.00019480
+Epoch  58|time: 0.09s|train_loss 0.00018484|val_loss 0.00023327
+Epoch  59|time: 0.09s|train_loss 0.00019199|val_loss 0.00020243
+Epoch  60|time: 0.09s|train_loss 0.00021362|val_loss 0.00025448
+Epoch  61|time: 0.09s|train_loss 0.00024756|val_loss 0.00019534
+Epoch  62|time: 0.09s|train_loss 0.00022045|val_loss 0.00019309
+Epoch  63|time: 0.12s|train_loss 0.00019500|val_loss 0.00018358
+Epoch  64|time: 0.09s|train_loss 0.00020362|val_loss 0.00018131
+Epoch  65|time: 0.09s|train_loss 0.00020357|val_loss 0.00018797
+Epoch  66|time: 0.09s|train_loss 0.00018017|val_loss 0.00018550
+Epoch  67|time: 0.09s|train_loss 0.00017600|val_loss 0.00018707
+Epoch  68|time: 0.09s|train_loss 0.00018864|val_loss 0.00019126
+Epoch  69|time: 0.09s|train_loss 0.00018437|val_loss 0.00023858
+Epoch  70|time: 0.09s|train_loss 0.00020265|val_loss 0.00019859
+Epoch  71|time: 0.09s|train_loss 0.00020842|val_loss 0.00019769
+Epoch  72|time: 0.09s|train_loss 0.00018939|val_loss 0.00018036
+Epoch  73|time: 0.09s|train_loss 0.00017844|val_loss 0.00017669
+Epoch  74|time: 0.09s|train_loss 0.00019364|val_loss 0.00019435
+Epoch  75|time: 0.09s|train_loss 0.00017997|val_loss 0.00017566
+Best validation epoch: 75 Sat May 13 00:56:40 2023
+TEST MAE 0.2163 std 0.0610 RMSE 0.3337 RMSEs 0.3194 PCC 0.9356 PCCs 0.9099 R2 0.8749 R2s 0.8157 Var 0.8749 Vars 0.8201 Peak 0.1256
+Epoch  76|time: 0.09s|train_loss 0.00016984|val_loss 0.00018023
+Epoch  77|time: 0.09s|train_loss 0.00016912|val_loss 0.00019014
+Epoch  78|time: 0.09s|train_loss 0.00018612|val_loss 0.00018989
+Epoch  79|time: 0.09s|train_loss 0.00016622|val_loss 0.00018040
+Epoch  80|time: 0.09s|train_loss 0.00016179|val_loss 0.00017603
+Epoch  81|time: 0.09s|train_loss 0.00017063|val_loss 0.00017710
+Epoch  82|time: 0.09s|train_loss 0.00016627|val_loss 0.00017561
+Best validation epoch: 82 Sat May 13 00:56:41 2023
+TEST MAE 0.2153 std 0.0637 RMSE 0.3328 RMSEs 0.3179 PCC 0.9358 PCCs 0.9100 R2 0.8756 R2s 0.8182 Var 0.8756 Vars 0.8217 Peak 0.1262
+Epoch  83|time: 0.09s|train_loss 0.00016268|val_loss 0.00017875
+Epoch  84|time: 0.09s|train_loss 0.00016357|val_loss 0.00017758
+Epoch  85|time: 0.09s|train_loss 0.00016692|val_loss 0.00017941
+Epoch  86|time: 0.09s|train_loss 0.00016558|val_loss 0.00022323
+Epoch  87|time: 0.09s|train_loss 0.00018059|val_loss 0.00021731
+Epoch  88|time: 0.09s|train_loss 0.00017997|val_loss 0.00022793
+Epoch  89|time: 0.09s|train_loss 0.00016753|val_loss 0.00019904
+Epoch  90|time: 0.09s|train_loss 0.00018363|val_loss 0.00019358
+Epoch  91|time: 0.09s|train_loss 0.00017587|val_loss 0.00017850
+Epoch  92|time: 0.09s|train_loss 0.00016050|val_loss 0.00017947
+Epoch  93|time: 0.09s|train_loss 0.00016512|val_loss 0.00017442
+Best validation epoch: 93 Sat May 13 00:56:42 2023
+TEST MAE 0.2106 std 0.0607 RMSE 0.3285 RMSEs 0.3144 PCC 0.9376 PCCs 0.9114 R2 0.8788 R2s 0.8219 Var 0.8790 Vars 0.8248 Peak 0.1249
+Epoch  94|time: 0.09s|train_loss 0.00019812|val_loss 0.00017665
+Epoch  95|time: 0.09s|train_loss 0.00017389|val_loss 0.00017268
+Best validation epoch: 95 Sat May 13 00:56:42 2023
+TEST MAE 0.2100 std 0.0615 RMSE 0.3274 RMSEs 0.3128 PCC 0.9384 PCCs 0.9139 R2 0.8796 R2s 0.8235 Var 0.8796 Vars 0.8269 Peak 0.1238
+Epoch  96|time: 0.09s|train_loss 0.00018256|val_loss 0.00017434
+Epoch  97|time: 0.09s|train_loss 0.00015980|val_loss 0.00018445
+Epoch  98|time: 0.09s|train_loss 0.00015853|val_loss 0.00017668
+Epoch  99|time: 0.09s|train_loss 0.00017114|val_loss 0.00017400
+Epoch 100|time: 0.09s|train_loss 0.00016830|val_loss 0.00017597
+Epoch 101|time: 0.09s|train_loss 0.00017285|val_loss 0.00017322
+Epoch 102|time: 0.09s|train_loss 0.00016318|val_loss 0.00017866
+Epoch 103|time: 0.09s|train_loss 0.00019714|val_loss 0.00020378
+Epoch 104|time: 0.09s|train_loss 0.00019180|val_loss 0.00020347
+Epoch 105|time: 0.09s|train_loss 0.00019020|val_loss 0.00018180
+Epoch 106|time: 0.09s|train_loss 0.00018215|val_loss 0.00019142
+Epoch 107|time: 0.09s|train_loss 0.00019787|val_loss 0.00019255
+Epoch 108|time: 0.09s|train_loss 0.00017628|val_loss 0.00020114
+Epoch 109|time: 0.09s|train_loss 0.00018332|val_loss 0.00018029
+Epoch 110|time: 0.09s|train_loss 0.00019789|val_loss 0.00018309
+Epoch 111|time: 0.09s|train_loss 0.00016766|val_loss 0.00018293
+Epoch 112|time: 0.09s|train_loss 0.00018316|val_loss 0.00018773
+Epoch 113|time: 0.09s|train_loss 0.00020312|val_loss 0.00018309
+Epoch 114|time: 0.09s|train_loss 0.00017406|val_loss 0.00017896
+Epoch 115|time: 0.09s|train_loss 0.00017248|val_loss 0.00019483
+Epoch 116|time: 0.09s|train_loss 0.00018843|val_loss 0.00019896
+Epoch 117|time: 0.09s|train_loss 0.00018658|val_loss 0.00020549
+Epoch 118|time: 0.09s|train_loss 0.00017247|val_loss 0.00018226
+Epoch 119|time: 0.09s|train_loss 0.00017057|val_loss 0.00018043
+Epoch 120|time: 0.09s|train_loss 0.00016910|val_loss 0.00017454
+Epoch 121|time: 0.09s|train_loss 0.00018672|val_loss 0.00019724
+Epoch 122|time: 0.09s|train_loss 0.00018618|val_loss 0.00021477
+Epoch 123|time: 0.09s|train_loss 0.00018899|val_loss 0.00017655
+Epoch 124|time: 0.09s|train_loss 0.00018954|val_loss 0.00019058
+Epoch 125|time: 0.09s|train_loss 0.00017384|val_loss 0.00017263
+Best validation epoch: 125 Sat May 13 00:56:45 2023
+TEST MAE 0.2262 std 0.0633 RMSE 0.3463 RMSEs 0.3322 PCC 0.9370 PCCs 0.9157 R2 0.8653 R2s 0.7973 Var 0.8715 Vars 0.8170 Peak 0.1259
+Epoch 126|time: 0.09s|train_loss 0.00017532|val_loss 0.00017993
+Epoch 127|time: 0.09s|train_loss 0.00017930|val_loss 0.00018701
+Epoch 128|time: 0.09s|train_loss 0.00017633|val_loss 0.00017959
+Epoch 129|time: 0.09s|train_loss 0.00017834|val_loss 0.00018799
+Epoch 130|time: 0.09s|train_loss 0.00019092|val_loss 0.00018847
+Epoch 131|time: 0.09s|train_loss 0.00017059|val_loss 0.00017274
+Epoch 132|time: 0.09s|train_loss 0.00016390|val_loss 0.00017910
+Epoch 133|time: 0.09s|train_loss 0.00016540|val_loss 0.00017923
+Epoch 134|time: 0.09s|train_loss 0.00016540|val_loss 0.00017275
+Epoch 135|time: 0.09s|train_loss 0.00016300|val_loss 0.00017996
+Epoch 136|time: 0.09s|train_loss 0.00016692|val_loss 0.00017397
+Epoch 137|time: 0.09s|train_loss 0.00016659|val_loss 0.00017403
+Epoch 138|time: 0.09s|train_loss 0.00016682|val_loss 0.00018143
+Epoch 139|time: 0.09s|train_loss 0.00020934|val_loss 0.00017949
+Epoch 140|time: 0.09s|train_loss 0.00019805|val_loss 0.00018070
+Epoch 141|time: 0.09s|train_loss 0.00016916|val_loss 0.00017458
+Epoch 142|time: 0.09s|train_loss 0.00016872|val_loss 0.00017561
+Epoch 143|time: 0.09s|train_loss 0.00018087|val_loss 0.00022069
+Epoch 144|time: 0.09s|train_loss 0.00016960|val_loss 0.00022326
+Epoch 145|time: 0.09s|train_loss 0.00016648|val_loss 0.00020172
+Epoch 146|time: 0.09s|train_loss 0.00016788|val_loss 0.00018195
+Epoch 147|time: 0.09s|train_loss 0.00017330|val_loss 0.00017395
+Epoch 148|time: 0.09s|train_loss 0.00017860|val_loss 0.00016871
+Best validation epoch: 148 Sat May 13 00:56:47 2023
+TEST MAE 0.2256 std 0.0602 RMSE 0.3415 RMSEs 0.3282 PCC 0.9371 PCCs 0.9154 R2 0.8690 R2s 0.8014 Var 0.8760 Vars 0.8248 Peak 0.1221
+Epoch 149|time: 0.09s|train_loss 0.00019445|val_loss 0.00019027
+Epoch 150|time: 0.09s|train_loss 0.00018943|val_loss 0.00019421
+Epoch 151|time: 0.09s|train_loss 0.00019502|val_loss 0.00018980
+Epoch 152|time: 0.09s|train_loss 0.00016482|val_loss 0.00017172
+Epoch 153|time: 0.09s|train_loss 0.00016070|val_loss 0.00017091
+Epoch 154|time: 0.09s|train_loss 0.00016534|val_loss 0.00017678
+Epoch 155|time: 0.09s|train_loss 0.00016074|val_loss 0.00017354
+Epoch 156|time: 0.09s|train_loss 0.00015569|val_loss 0.00017723
+Epoch 157|time: 0.09s|train_loss 0.00016723|val_loss 0.00016964
+Epoch 158|time: 0.09s|train_loss 0.00016398|val_loss 0.00017770
+Epoch 159|time: 0.09s|train_loss 0.00018126|val_loss 0.00018645
+Epoch 160|time: 0.09s|train_loss 0.00017071|val_loss 0.00016929
+Epoch 161|time: 0.09s|train_loss 0.00016487|val_loss 0.00017531
+Epoch 162|time: 0.09s|train_loss 0.00018561|val_loss 0.00018526
+Epoch 163|time: 0.09s|train_loss 0.00018002|val_loss 0.00020360
+Epoch 164|time: 0.09s|train_loss 0.00019990|val_loss 0.00019312
+Epoch 165|time: 0.09s|train_loss 0.00017483|val_loss 0.00021070
+Epoch 166|time: 0.09s|train_loss 0.00018708|val_loss 0.00018470
+Epoch 167|time: 0.09s|train_loss 0.00018938|val_loss 0.00019566
+Epoch 168|time: 0.09s|train_loss 0.00019496|val_loss 0.00027592
+Epoch 169|time: 0.09s|train_loss 0.00021756|val_loss 0.00019492
+Epoch 170|time: 0.09s|train_loss 0.00017480|val_loss 0.00018173
+Epoch 171|time: 0.09s|train_loss 0.00016758|val_loss 0.00018382
+Epoch 172|time: 0.09s|train_loss 0.00016034|val_loss 0.00018917
+Epoch 173|time: 0.09s|train_loss 0.00018030|val_loss 0.00018317
+Epoch 174|time: 0.09s|train_loss 0.00016685|val_loss 0.00018523
+Epoch 175|time: 0.09s|train_loss 0.00016976|val_loss 0.00021871
+Epoch 176|time: 0.09s|train_loss 0.00017220|val_loss 0.00020303
+Epoch 177|time: 0.09s|train_loss 0.00017161|val_loss 0.00018984
+Epoch 178|time: 0.09s|train_loss 0.00016520|val_loss 0.00018427
+Epoch 179|time: 0.09s|train_loss 0.00017163|val_loss 0.00018508
+Epoch 180|time: 0.09s|train_loss 0.00016906|val_loss 0.00018880
+Epoch 181|time: 0.09s|train_loss 0.00016944|val_loss 0.00020188
+Epoch 182|time: 0.09s|train_loss 0.00017996|val_loss 0.00026237
+Epoch 183|time: 0.09s|train_loss 0.00019958|val_loss 0.00021573
+Epoch 184|time: 0.09s|train_loss 0.00017906|val_loss 0.00020193
+Epoch 185|time: 0.09s|train_loss 0.00016604|val_loss 0.00018366
+Epoch 186|time: 0.09s|train_loss 0.00018138|val_loss 0.00018159
+Epoch 187|time: 0.09s|train_loss 0.00017096|val_loss 0.00020553
+Epoch 188|time: 0.09s|train_loss 0.00017691|val_loss 0.00018266
+Epoch 189|time: 0.09s|train_loss 0.00016191|val_loss 0.00018006
+Epoch 190|time: 0.09s|train_loss 0.00017185|val_loss 0.00018068
+Epoch 191|time: 0.09s|train_loss 0.00019738|val_loss 0.00018664
+Epoch 192|time: 0.09s|train_loss 0.00018304|val_loss 0.00018496
+Epoch 193|time: 0.09s|train_loss 0.00017905|val_loss 0.00019857
+Epoch 194|time: 0.09s|train_loss 0.00017607|val_loss 0.00018114
+Epoch 195|time: 0.09s|train_loss 0.00018156|val_loss 0.00018751
+Epoch 196|time: 0.09s|train_loss 0.00019100|val_loss 0.00018802
+Epoch 197|time: 0.09s|train_loss 0.00018600|val_loss 0.00018256
+Epoch 198|time: 0.09s|train_loss 0.00017154|val_loss 0.00018295
+Epoch 199|time: 0.09s|train_loss 0.00017159|val_loss 0.00019069
+Epoch 200|time: 0.09s|train_loss 0.00016669|val_loss 0.00019796
+Epoch 201|time: 0.09s|train_loss 0.00016995|val_loss 0.00021054
+Epoch 202|time: 0.09s|train_loss 0.00022008|val_loss 0.00022940
+Epoch 203|time: 0.09s|train_loss 0.00018301|val_loss 0.00021661
+Epoch 204|time: 0.09s|train_loss 0.00019238|val_loss 0.00019585
+Epoch 205|time: 0.09s|train_loss 0.00016294|val_loss 0.00018172
+Epoch 206|time: 0.09s|train_loss 0.00016787|val_loss 0.00018231
+Epoch 207|time: 0.09s|train_loss 0.00017168|val_loss 0.00018104
+Epoch 208|time: 0.09s|train_loss 0.00017857|val_loss 0.00018151
+Epoch 209|time: 0.09s|train_loss 0.00016993|val_loss 0.00018464
+Epoch 210|time: 0.09s|train_loss 0.00016315|val_loss 0.00017913
+Epoch 211|time: 0.09s|train_loss 0.00016228|val_loss 0.00017866
+Epoch 212|time: 0.09s|train_loss 0.00016372|val_loss 0.00018270
+Epoch 213|time: 0.09s|train_loss 0.00017221|val_loss 0.00017890
+Epoch 214|time: 0.09s|train_loss 0.00017829|val_loss 0.00018375
+Epoch 215|time: 0.09s|train_loss 0.00017268|val_loss 0.00017734
+Epoch 216|time: 0.09s|train_loss 0.00017119|val_loss 0.00020008
+Epoch 217|time: 0.09s|train_loss 0.00016810|val_loss 0.00018844
+Epoch 218|time: 0.09s|train_loss 0.00017466|val_loss 0.00017826
+Epoch 219|time: 0.09s|train_loss 0.00018889|val_loss 0.00017678
+Epoch 220|time: 0.09s|train_loss 0.00016477|val_loss 0.00017417
+Epoch 221|time: 0.09s|train_loss 0.00017598|val_loss 0.00018822
+Epoch 222|time: 0.09s|train_loss 0.00016851|val_loss 0.00018010
+Epoch 223|time: 0.09s|train_loss 0.00016101|val_loss 0.00017234
+Epoch 224|time: 0.09s|train_loss 0.00016374|val_loss 0.00017439
+Epoch 225|time: 0.09s|train_loss 0.00016137|val_loss 0.00017327
+Epoch 226|time: 0.09s|train_loss 0.00015755|val_loss 0.00018371
+Epoch 227|time: 0.09s|train_loss 0.00017860|val_loss 0.00017575
+Epoch 228|time: 0.09s|train_loss 0.00016581|val_loss 0.00020790
+Epoch 229|time: 0.09s|train_loss 0.00020359|val_loss 0.00017607
+Epoch 230|time: 0.09s|train_loss 0.00017603|val_loss 0.00017194
+Epoch 231|time: 0.09s|train_loss 0.00016221|val_loss 0.00017422
+Epoch 232|time: 0.09s|train_loss 0.00016581|val_loss 0.00017943
+Epoch 233|time: 0.09s|train_loss 0.00016773|val_loss 0.00020229
+Epoch 234|time: 0.09s|train_loss 0.00017436|val_loss 0.00021705
+Epoch 235|time: 0.09s|train_loss 0.00017343|val_loss 0.00018106
+Epoch 236|time: 0.09s|train_loss 0.00016364|val_loss 0.00019739
+Epoch 237|time: 0.09s|train_loss 0.00018760|val_loss 0.00017996
+Epoch 238|time: 0.09s|train_loss 0.00018424|val_loss 0.00019019
+Epoch 239|time: 0.09s|train_loss 0.00020812|val_loss 0.00017380
+Epoch 240|time: 0.09s|train_loss 0.00017244|val_loss 0.00019980
+Epoch 241|time: 0.09s|train_loss 0.00017039|val_loss 0.00019647
+Epoch 242|time: 0.09s|train_loss 0.00017160|val_loss 0.00017831
+Epoch 243|time: 0.09s|train_loss 0.00016686|val_loss 0.00019635
+Epoch 244|time: 0.09s|train_loss 0.00017887|val_loss 0.00018001
+Epoch 245|time: 0.09s|train_loss 0.00015742|val_loss 0.00017464
+Epoch 246|time: 0.09s|train_loss 0.00016633|val_loss 0.00018101
+Epoch 247|time: 0.09s|train_loss 0.00015686|val_loss 0.00017692
+Epoch 248|time: 0.09s|train_loss 0.00015721|val_loss 0.00017842
+Epoch 249|time: 0.09s|train_loss 0.00015836|val_loss 0.00017505
+Epoch 250|time: 0.09s|train_loss 0.00017051|val_loss 0.00017386
+Epoch 251|time: 0.09s|train_loss 0.00015407|val_loss 0.00017137
+Epoch 252|time: 0.09s|train_loss 0.00016288|val_loss 0.00017476
+Epoch 253|time: 0.09s|train_loss 0.00018190|val_loss 0.00017172
+Epoch 254|time: 0.09s|train_loss 0.00015909|val_loss 0.00017329
+Epoch 255|time: 0.09s|train_loss 0.00016064|val_loss 0.00017310
+Epoch 256|time: 0.09s|train_loss 0.00016166|val_loss 0.00017305
+Epoch 257|time: 0.09s|train_loss 0.00015534|val_loss 0.00018252
+Epoch 258|time: 0.09s|train_loss 0.00019499|val_loss 0.00018590
+Epoch 259|time: 0.09s|train_loss 0.00017098|val_loss 0.00017548
+Epoch 260|time: 0.09s|train_loss 0.00016711|val_loss 0.00017548
+Epoch 261|time: 0.09s|train_loss 0.00017472|val_loss 0.00018477
+Epoch 262|time: 0.09s|train_loss 0.00016037|val_loss 0.00018071
+Epoch 263|time: 0.09s|train_loss 0.00015487|val_loss 0.00017209
+Epoch 264|time: 0.09s|train_loss 0.00017260|val_loss 0.00017888
+Epoch 265|time: 0.09s|train_loss 0.00016161|val_loss 0.00018198
+Epoch 266|time: 0.09s|train_loss 0.00016243|val_loss 0.00017846
+Epoch 267|time: 0.09s|train_loss 0.00016579|val_loss 0.00018092
+Epoch 268|time: 0.09s|train_loss 0.00016400|val_loss 0.00017162
+Epoch 269|time: 0.09s|train_loss 0.00016744|val_loss 0.00017686
+Epoch 270|time: 0.09s|train_loss 0.00016323|val_loss 0.00018184
+Epoch 271|time: 0.09s|train_loss 0.00017763|val_loss 0.00018604
+Epoch 272|time: 0.09s|train_loss 0.00020486|val_loss 0.00019187
+Epoch 273|time: 0.09s|train_loss 0.00017432|val_loss 0.00016957
+Epoch 274|time: 0.09s|train_loss 0.00017665|val_loss 0.00018066
+Epoch 275|time: 0.09s|train_loss 0.00016077|val_loss 0.00018020
+Epoch 276|time: 0.09s|train_loss 0.00018367|val_loss 0.00017595
+Epoch 277|time: 0.09s|train_loss 0.00015552|val_loss 0.00017357
+Epoch 278|time: 0.09s|train_loss 0.00016125|val_loss 0.00018389
+Epoch 279|time: 0.09s|train_loss 0.00017666|val_loss 0.00017365
+Epoch 280|time: 0.09s|train_loss 0.00016740|val_loss 0.00017572
+Epoch 281|time: 0.09s|train_loss 0.00017806|val_loss 0.00017727
+Epoch 282|time: 0.09s|train_loss 0.00016418|val_loss 0.00017339
+Epoch 283|time: 0.09s|train_loss 0.00017546|val_loss 0.00017240
+Epoch 284|time: 0.09s|train_loss 0.00015766|val_loss 0.00017239
+Epoch 285|time: 0.09s|train_loss 0.00016553|val_loss 0.00017208
+Epoch 286|time: 0.09s|train_loss 0.00016936|val_loss 0.00018247
+Epoch 287|time: 0.09s|train_loss 0.00019566|val_loss 0.00018870
+Epoch 288|time: 0.09s|train_loss 0.00017281|val_loss 0.00017589
+Epoch 289|time: 0.09s|train_loss 0.00016264|val_loss 0.00018081
+Epoch 290|time: 0.09s|train_loss 0.00016911|val_loss 0.00017363
+Epoch 291|time: 0.09s|train_loss 0.00016018|val_loss 0.00017475
+Epoch 292|time: 0.09s|train_loss 0.00015471|val_loss 0.00018962
+Epoch 293|time: 0.09s|train_loss 0.00016003|val_loss 0.00017773
+Epoch 294|time: 0.09s|train_loss 0.00016945|val_loss 0.00018093
+Epoch 295|time: 0.09s|train_loss 0.00018006|val_loss 0.00017228
+Epoch 296|time: 0.09s|train_loss 0.00016431|val_loss 0.00018011
+Epoch 297|time: 0.09s|train_loss 0.00016003|val_loss 0.00017535
+Epoch 298|time: 0.09s|train_loss 0.00016041|val_loss 0.00017235
+Epoch 299|time: 0.09s|train_loss 0.00016898|val_loss 0.00017880
+Epoch 300|time: 0.09s|train_loss 0.00019146|val_loss 0.00018135
+Epoch 301|time: 0.09s|train_loss 0.00016980|val_loss 0.00018672
+Epoch 302|time: 0.09s|train_loss 0.00016778|val_loss 0.00019392
+Epoch 303|time: 0.09s|train_loss 0.00016833|val_loss 0.00018897
+Epoch 304|time: 0.09s|train_loss 0.00016390|val_loss 0.00018766
+Epoch 305|time: 0.09s|train_loss 0.00016432|val_loss 0.00019152
+Epoch 306|time: 0.09s|train_loss 0.00016505|val_loss 0.00017465
+Epoch 307|time: 0.09s|train_loss 0.00017409|val_loss 0.00019995
+Epoch 308|time: 0.09s|train_loss 0.00016508|val_loss 0.00018096
+Epoch 309|time: 0.09s|train_loss 0.00018427|val_loss 0.00017573
+Epoch 310|time: 0.09s|train_loss 0.00015492|val_loss 0.00017108
+Epoch 311|time: 0.09s|train_loss 0.00016555|val_loss 0.00017744
+Epoch 312|time: 0.09s|train_loss 0.00016070|val_loss 0.00018163
+Epoch 313|time: 0.09s|train_loss 0.00015887|val_loss 0.00017481
+Epoch 314|time: 0.09s|train_loss 0.00018083|val_loss 0.00017192
+Epoch 315|time: 0.09s|train_loss 0.00016922|val_loss 0.00017218
+Epoch 316|time: 0.09s|train_loss 0.00016159|val_loss 0.00018033
+Epoch 317|time: 0.09s|train_loss 0.00015935|val_loss 0.00018185
+Epoch 318|time: 0.09s|train_loss 0.00016619|val_loss 0.00018057
+Epoch 319|time: 0.09s|train_loss 0.00016286|val_loss 0.00017701
+Epoch 320|time: 0.09s|train_loss 0.00018192|val_loss 0.00018111
+Epoch 321|time: 0.09s|train_loss 0.00016529|val_loss 0.00017868
+Epoch 322|time: 0.09s|train_loss 0.00016352|val_loss 0.00018113
+Epoch 323|time: 0.09s|train_loss 0.00016652|val_loss 0.00017060
+Epoch 324|time: 0.09s|train_loss 0.00017097|val_loss 0.00017062
+Epoch 325|time: 0.09s|train_loss 0.00018008|val_loss 0.00019360
+Epoch 326|time: 0.09s|train_loss 0.00016228|val_loss 0.00018008
+Epoch 327|time: 0.09s|train_loss 0.00016132|val_loss 0.00017911
+Epoch 328|time: 0.09s|train_loss 0.00017044|val_loss 0.00018758
+Epoch 329|time: 0.09s|train_loss 0.00019815|val_loss 0.00017304
+Epoch 330|time: 0.09s|train_loss 0.00015820|val_loss 0.00020803
+Epoch 331|time: 0.09s|train_loss 0.00016151|val_loss 0.00020856
+Epoch 332|time: 0.09s|train_loss 0.00016651|val_loss 0.00018551
+Epoch 333|time: 0.09s|train_loss 0.00018174|val_loss 0.00019982
+Epoch 334|time: 0.09s|train_loss 0.00019261|val_loss 0.00019067
+Epoch 335|time: 0.09s|train_loss 0.00016977|val_loss 0.00024152
+Epoch 336|time: 0.09s|train_loss 0.00021492|val_loss 0.00021382
+Epoch 337|time: 0.09s|train_loss 0.00017803|val_loss 0.00022673
+Epoch 338|time: 0.09s|train_loss 0.00019288|val_loss 0.00020604
+Epoch 339|time: 0.09s|train_loss 0.00017495|val_loss 0.00018167
+Epoch 340|time: 0.09s|train_loss 0.00016386|val_loss 0.00017062
+Epoch 341|time: 0.09s|train_loss 0.00016727|val_loss 0.00017138
+Epoch 342|time: 0.09s|train_loss 0.00018885|val_loss 0.00017869
+Epoch 343|time: 0.09s|train_loss 0.00015946|val_loss 0.00017729
+Epoch 344|time: 0.09s|train_loss 0.00017045|val_loss 0.00018043
+Epoch 345|time: 0.09s|train_loss 0.00016021|val_loss 0.00017755
+Epoch 346|time: 0.09s|train_loss 0.00015588|val_loss 0.00017525
+Epoch 347|time: 0.09s|train_loss 0.00016102|val_loss 0.00017301
+Epoch 348|time: 0.09s|train_loss 0.00016240|val_loss 0.00021173
+Final evaluation
+TEST MAE 0.2256 | std 0.0602 | RMSE 0.3415 | RMSEs 0.3282 | PCC 0.9371 | PCCs 0.9154 | R2 0.8690 | R2s 0.8014 | Var 0.8760 | Vars 0.8248 | Peak 0.1221
